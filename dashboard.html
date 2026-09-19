@@ -3,18 +3,56 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>WVSU Student Information</title>
+    <title>WVSU Main Campus Portal - Student Information</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body class="dashboard-page">
     <header class="site-header">
-      <div class="header-inner">
-        <img
-          class="header-title"
-          src="assets/header-title.png"
-          alt="West Visayas State University Integrated University Information System"
-        />
-        <a class="header-action" href="index.html">Log In</a>
+      <div class="header-inner has-menu">
+        <p class="header-title">
+          <span class="school">West Visayas State University</span>
+          <span class="portal">Main Campus Portal</span>
+        </p>
+
+        <div class="nav-menu">
+          <button
+            class="menu-toggle"
+            id="menu-toggle"
+            type="button"
+            aria-label="Open menu"
+            aria-expanded="false"
+            aria-controls="site-menu"
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+
+          <nav class="menu-panel" id="site-menu" aria-label="Student menu" hidden>
+            <ul>
+              <li><a href="dashboard.html" aria-current="page">Dashboard</a></li>
+              <li><a href="https://iuis.wvsu.edu.ph/iuis/students/stud.messaging.php?mainID=101&amp;menuDesc=Message" target="_blank" rel="noopener noreferrer">Message</a></li>
+              <li><a href="https://iuis.wvsu.edu.ph/iuis/students/stud.section.offering.php?mainID=102&amp;menuDesc=Class+Offerings" target="_blank" rel="noopener noreferrer">Class Offerings</a></li>
+              <li><a href="https://iuis.wvsu.edu.ph/iuis/students/stud.regs.new.php?mainID=103&amp;menuDesc=Registration" target="_blank" rel="noopener noreferrer">Registration</a></li>
+              <li><a href="https://iuis.wvsu.edu.ph/iuis/students/profile.php?mainID=104&amp;menuDesc=Personal+Information" target="_blank" rel="noopener noreferrer">Personal Information</a></li>
+              <li><a href="https://iuis.wvsu.edu.ph/iuis/students/schedule.php?mainID=105&amp;menuDesc=My+Schedule" target="_blank" rel="noopener noreferrer">My Schedule</a></li>
+              <li><a href="https://iuis.wvsu.edu.ph/iuis/students/grades.php?mainID=106&amp;menuDesc=My+Grades" target="_blank" rel="noopener noreferrer">My Grades</a></li>
+              <li><a href="https://iuis.wvsu.edu.ph/iuis/students/accounts.php?mainID=107&amp;menuDesc=My+Accounts" target="_blank" rel="noopener noreferrer">My Accounts</a></li>
+              <li><a href="https://iuis.wvsu.edu.ph/iuis/students/stud.calendar.php?mainID=108&amp;menuDesc=Calendar" target="_blank" rel="noopener noreferrer">Calendar</a></li>
+              <li><a href="https://iuis.wvsu.edu.ph/iuis/students/stud.pwd.php?mainID=1090&amp;menuDesc=Password" target="_blank" rel="noopener noreferrer">Password</a></li>
+              <li><a href="https://iuis.wvsu.edu.ph/iuis/students/stud.deficiency.php?mainID=1094&amp;menuDesc=Deficiency" target="_blank" rel="noopener noreferrer">Deficiency</a></li>
+              <li><a href="https://iuis.wvsu.edu.ph/iuis/students/studentlogtrail.php?mainID=1097&amp;menuDesc=Log+Trail" target="_blank" rel="noopener noreferrer">Log Trail</a></li>
+              <li><a href="https://iuis.wvsu.edu.ph/iuis/students/enrollment.confirmation.php?mainID=1099&amp;menuDesc=Enrollment+Confirmation" target="_blank" rel="noopener noreferrer">Enrollment Confirmation</a></li>
+              <li><a href="https://iuis.wvsu.edu.ph/iuis/students/upload.deposit.slip.php?mainID=1100&amp;menuDesc=Upload+Deposit+Slip" target="_blank" rel="noopener noreferrer">Upload Deposit Slip</a></li>
+              <li><a href="https://iuis.wvsu.edu.ph/iuis/students/stud.subjectadjustments.php?mainID=1106&amp;menuDesc=Subject+Adjustment" target="_blank" rel="noopener noreferrer">Subject Adjustment</a></li>
+              <li><a href="https://iuis.wvsu.edu.ph/iuis/students/faculty.eval.php?mainID=1001&amp;menuDesc=Faculty+Evaluation" target="_blank" rel="noopener noreferrer">Faculty Evaluation</a></li>
+            </ul>
+            <div class="menu-divider" role="presentation"></div>
+            <ul>
+              <li><a href="index.html">Log Out</a></li>
+            </ul>
+          </nav>
+        </div>
       </div>
     </header>
 
@@ -98,6 +136,36 @@
           </dl>
           <p class="card-note">You can view the details in My Grades and Curriculum/Prospectus.</p>
         </article>
+
+        <article class="info-card calendar-card" aria-labelledby="calendar-title">
+          <div class="calendar-header">
+            <div>
+              <span class="eyebrow">Calendar</span>
+              <h2 id="calendar-title" aria-live="polite"></h2>
+            </div>
+            <div class="calendar-nav">
+              <button class="calendar-button" id="calendar-prev" type="button" aria-label="Previous month">&lsaquo;</button>
+              <button class="calendar-today" id="calendar-today" type="button">Today</button>
+              <button class="calendar-button" id="calendar-next" type="button" aria-label="Next month">&rsaquo;</button>
+            </div>
+          </div>
+
+          <table class="calendar-grid" aria-labelledby="calendar-title">
+            <thead>
+              <tr id="calendar-weekdays"></tr>
+            </thead>
+            <tbody id="calendar-body"></tbody>
+          </table>
+
+          <p class="card-note">
+            For school events and deadlines, see the
+            <a
+              href="https://iuis.wvsu.edu.ph/iuis/students/stud.calendar.php?mainID=108&amp;menuDesc=Calendar"
+              target="_blank"
+              rel="noopener noreferrer"
+            >full calendar</a>.
+          </p>
+        </article>
       </section>
     </main>
 
@@ -105,5 +173,7 @@
       <a href="#">Terms &amp; Support</a>
       <a href="#">Privacy Policy</a>
     </footer>
+
+    <script src="dashboard.js"></script>
   </body>
 </html>

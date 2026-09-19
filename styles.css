@@ -53,23 +53,153 @@ select {
 }
 
 .header-title {
-  width: min(727px, 100%);
-  height: auto;
-  display: block;
+  max-width: 100%;
+  margin: 0;
+  padding: 10px 0;
+  color: #ffffff;
+  font-family: Georgia, "Times New Roman", serif;
+  line-height: 1.15;
+  text-align: center;
+  text-transform: uppercase;
+  text-shadow: 0 2px 6px rgba(8, 35, 67, 0.35);
 }
 
-.header-action {
+.header-title .school {
+  display: block;
+  font-size: clamp(1.05rem, 3.2vw, 1.85rem);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.header-title .portal {
+  display: block;
+  margin-top: 4px;
+  color: var(--gold);
+  font-size: clamp(0.78rem, 2.2vw, 1.05rem);
+  font-weight: 400;
+  letter-spacing: 0.2em;
+}
+
+/* Keep the centered title clear of the burger button */
+.header-inner.has-menu .header-title {
+  padding-inline: 56px;
+}
+
+/* Burger menu */
+
+.nav-menu {
   position: absolute;
   right: 0;
-  color: #ffffff;
-  font-weight: 700;
-  text-decoration: none;
+  top: 50%;
+  z-index: 30;
+  transform: translateY(-50%);
 }
 
-.header-action:hover,
-.header-action:focus-visible {
+.menu-toggle {
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  display: grid;
+  place-content: center;
+  gap: 5px;
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.menu-toggle span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: currentColor;
+  border-radius: 2px;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.menu-toggle:hover,
+.menu-toggle:focus-visible {
   color: var(--gold);
+  border-color: var(--gold);
   outline: none;
+}
+
+.menu-toggle[aria-expanded="true"] span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.menu-toggle[aria-expanded="true"] span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle[aria-expanded="true"] span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+.menu-panel {
+  position: absolute;
+  top: calc(100% + 12px);
+  right: 0;
+  width: min(300px, calc(100vw - 32px));
+  max-height: calc(100vh - 130px);
+  padding: 8px;
+  overflow-y: auto;
+  background: #ffffff;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+}
+
+.menu-panel[hidden] {
+  display: none;
+}
+
+.menu-panel ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.menu-panel a {
+  display: block;
+  padding: 10px 12px;
+  color: var(--ink);
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 6px;
+}
+
+.menu-panel a:hover,
+.menu-panel a:focus-visible {
+  color: var(--blue-900);
+  background: var(--blue-100);
+  outline: none;
+}
+
+.menu-panel a:focus-visible {
+  outline: 2px solid var(--blue-600);
+  outline-offset: -2px;
+}
+
+.menu-panel a[aria-current="page"] {
+  color: var(--blue-900);
+  background: #f4f9fd;
+  box-shadow: inset 3px 0 0 var(--gold);
+  font-weight: 800;
+}
+
+.menu-divider {
+  height: 1px;
+  margin: 6px 4px;
+  background: var(--line);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .menu-toggle span {
+    transition: none;
+  }
 }
 
 .page-shell {
@@ -158,7 +288,8 @@ h2 {
   gap: 10px;
 }
 
-.login-form label {
+.login-form label,
+.login-form legend {
   color: #2c4f6f;
   font-weight: 700;
   font-size: 0.9rem;
@@ -188,6 +319,38 @@ h2 {
 .login-form select:focus {
   border-color: var(--blue-600);
   outline: 3px solid rgba(52, 122, 179, 0.18);
+}
+
+/* Date of birth: month / day / year dropdowns */
+
+.date-field {
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.date-field legend {
+  padding: 0;
+  margin-bottom: 10px;
+}
+
+.date-selects {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1.1fr;
+  gap: 8px;
+}
+
+.date-selects select {
+  padding-right: 28px;
+}
+
+.date-selects select:invalid {
+  color: var(--muted);
+}
+
+.date-selects option {
+  color: var(--ink);
 }
 
 .form-actions {
@@ -353,6 +516,137 @@ h2 {
   gap: 24px;
 }
 
+/* Application form link on the login screen */
+
+.apply-prompt {
+  width: 100%;
+  margin: 18px 0 0;
+  padding-top: 18px;
+  color: var(--muted);
+  font-size: 0.9rem;
+  text-align: center;
+  border-top: 1px solid var(--line);
+}
+
+.apply-prompt a {
+  color: var(--blue-800);
+  font-weight: 700;
+}
+
+.apply-prompt a:hover,
+.apply-prompt a:focus-visible {
+  color: var(--blue-900);
+}
+
+/* Calendar */
+
+.calendar-card {
+  padding: 26px;
+}
+
+.calendar-card h2 {
+  font-size: 1.6rem;
+}
+
+.calendar-header {
+  margin-bottom: 16px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 12px;
+}
+
+.calendar-nav {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.calendar-button,
+.calendar-today {
+  min-height: 36px;
+  color: var(--blue-800);
+  background: #f4f9fd;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.calendar-button {
+  width: 36px;
+  font-size: 1.25rem;
+  line-height: 1;
+}
+
+.calendar-today {
+  padding: 0 12px;
+  font-size: 0.85rem;
+}
+
+.calendar-button:hover,
+.calendar-today:hover {
+  background: var(--blue-100);
+}
+
+.calendar-button:focus-visible,
+.calendar-today:focus-visible {
+  outline: 3px solid rgba(52, 122, 179, 0.35);
+  outline-offset: 1px;
+}
+
+.calendar-grid {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+.calendar-grid th {
+  padding: 6px 0;
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 800;
+  text-align: center;
+}
+
+.calendar-grid td {
+  padding: 3px 0;
+  text-align: center;
+}
+
+.calendar-day {
+  width: 34px;
+  height: 34px;
+  display: inline-grid;
+  place-items: center;
+  color: var(--ink);
+  font-size: 0.92rem;
+  font-weight: 600;
+  border-radius: 50%;
+}
+
+.calendar-grid td.is-outside .calendar-day {
+  color: #7d90a5;
+  font-weight: 400;
+}
+
+.calendar-grid td[aria-current="date"] .calendar-day {
+  color: #ffffff;
+  background: var(--blue-600);
+  font-weight: 800;
+}
+
+.calendar-card .card-note a {
+  color: var(--blue-800);
+  font-weight: 700;
+}
+
+.calendar-card .card-note a:hover,
+.calendar-card .card-note a:focus-visible {
+  color: var(--blue-900);
+}
+
 .progress-card,
 .summary-card {
   padding: 26px;
@@ -420,10 +714,6 @@ h2 {
 
   .login-box {
     padding: 22px;
-  }
-
-  .header-action {
-    display: none;
   }
 
   .dashboard-shell {

@@ -3,22 +3,21 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>WVSU Portal Login</title>
+    <title>WVSU Main Campus Portal - Log In</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <header class="site-header">
       <div class="header-inner">
-        <img
-          class="header-title"
-          src="assets/header-title.png"
-          alt="West Visayas State University Integrated University Information System"
-        />
+        <p class="header-title">
+          <span class="school">West Visayas State University</span>
+          <span class="portal">Main Campus Portal</span>
+        </p>
       </div>
     </header>
 
     <main class="page-shell">
-      <section class="portal-panel" aria-label="Integrated University Information System portal">
+      <section class="portal-panel" aria-label="Main Campus Portal">
         <section class="login-box" aria-label="Login form">
           <img class="seal" src="assets/wvsu-seal-cropped.png" alt="West Visayas State University seal" />
 
@@ -47,8 +46,20 @@
               required
             />
 
-            <label for="birth-date">Date of Birth</label>
-            <input id="birth-date" name="birth-date" type="date" autocomplete="bday" required />
+            <fieldset class="date-field">
+              <legend>Date of Birth</legend>
+              <div class="date-selects">
+                <select id="birth-month" name="birth-month" aria-label="Birth month" autocomplete="bday-month" required>
+                  <option value="" selected disabled>Month</option>
+                </select>
+                <select id="birth-day" name="birth-day" aria-label="Birth day" autocomplete="bday-day" required>
+                  <option value="" selected disabled>Day</option>
+                </select>
+                <select id="birth-year" name="birth-year" aria-label="Birth year" autocomplete="bday-year" required>
+                  <option value="" selected disabled>Year</option>
+                </select>
+              </div>
+            </fieldset>
 
             <label for="password" id="password-label">Password</label>
             <input
@@ -67,6 +78,15 @@
 
             <p class="form-status" role="status" aria-live="polite"></p>
           </form>
+
+          <p class="apply-prompt">
+            New applicant?
+            <a
+              href="https://iuis.wvsu.edu.ph/iuis/applicants/index.php"
+              target="_blank"
+              rel="noopener noreferrer"
+            >Open the application form</a>
+          </p>
         </section>
       </section>
 

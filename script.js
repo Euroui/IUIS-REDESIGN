@@ -46,6 +46,21 @@ const loginProfiles = {
   },
 };
 
+const monthNames = [
+  "January",
+  "February",
+  "March",
+  "April",
+  "May",
+  "June",
+  "July",
+  "August",
+  "September",
+  "October",
+  "November",
+  "December",
+];
+
 const userTypeSelect = document.querySelector("#user-type");
 const loginForm = document.querySelector(".login-form");
 const statusText = document.querySelector(".form-status");
@@ -57,6 +72,9 @@ const userIdInput = document.querySelector("#user-id");
 const passwordLabel = document.querySelector("#password-label");
 const passwordInput = document.querySelector("#password");
 const submitButton = document.querySelector("#submit-button");
+const birthMonth = document.querySelector("#birth-month");
+const birthDay = document.querySelector("#birth-day");
+const birthYear = document.querySelector("#birth-year");
 
 function updateLoginBlock() {
   const profile = loginProfiles[userTypeSelect.value];
@@ -72,17 +90,61 @@ function updateLoginBlock() {
   statusText.textContent = "";
 }
 
+// Date of birth: month / day / year dropdowns
+
+function daysInMonth(month, year) {
+  // Day 0 of the next month is the last day of this month.
+  // Until a year is picked, assume a leap year so Feb 29 stays available.
+  return new Date(year || 2000, month, 0).getDate();
+}
+
+function updateDayOptions() {
+  const selectedDay = Number(birthDay.value);
+  const maxDay = birthMonth.value
+    ? daysInMonth(Number(birthMonth.value), Number(birthYear.value))
+    : 31;
+
+  birthDay.length = 1; // keep the "Day" placeholder
+  birthDay.selectedIndex = 0;
+
+  for (let day = 1; day <= maxDay; day += 1) {
+    birthDay.add(new Option(day, day));
+  }
+
+  if (selectedDay && selectedDay <= maxDay) {
+    birthDay.value = String(selectedDay);
+  }
+}
+
+function setupBirthDate() {
+  const newestYear = new Date().getFullYear() - 10;
+  const oldestYear = 1940;
+
+  monthNames.forEach((name, index) => {
+    birthMonth.add(new Option(name, index + 1));
+  });
+
+  for (let year = newestYear; year >= oldestYear; year -= 1) {
+    birthYear.add(new Option(year, year));
+  }
+
+  updateDayOptions();
+
+  birthMonth.addEventListener("change", updateDayOptions);
+  birthYear.addEventListener("change", updateDayOptions);
+}
+
 userTypeSelect.addEventListener("change", updateLoginBlock);
 
 loginForm.addEventListener("submit", (event) => {
   event.preventDefault();
 
   const profile = loginProfiles[userTypeSelect.value];
-  const userId = document.querySelector("#user-id").value.trim();
-  const birthDate = document.querySelector("#birth-date").value.trim();
-  const password = document.querySelector("#password").value.trim();
+  const userId = userIdInput.value.trim();
+  const hasBirthDate = birthMonth.value && birthDay.value && birthYear.value;
+  const password = passwordInput.value.trim();
 
-  if (!userId || !birthDate || !password) {
+  if (!userId || !hasBirthDate || !password) {
     statusText.textContent = "Enter your ID, date of birth, and login details.";
     return;
   }
@@ -94,4 +156,5 @@ loginForm.addEventListener("submit", (event) => {
   }
 });
 
+setupBirthDate();
 updateLoginBlock();
