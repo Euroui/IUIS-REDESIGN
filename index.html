@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WVSU Portal Login</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="header-inner">
+        <img
+          class="header-title"
+          src="assets/header-title.png"
+          alt="West Visayas State University Integrated University Information System"
+        />
+      </div>
+    </header>
+
+    <main class="page-shell">
+      <section class="portal-panel" aria-label="Integrated University Information System portal">
+        <section class="login-box" aria-label="Login form">
+          <img class="seal" src="assets/wvsu-seal-cropped.png" alt="West Visayas State University seal" />
+
+          <div class="box-heading centered">
+            <span class="eyebrow" id="login-context">Student Portal</span>
+            <h1 id="login-title">Student Log In</h1>
+            <p class="login-description" id="login-description">Access your student records and progress page.</p>
+          </div>
+
+          <form class="login-form">
+            <label for="user-type">User Type</label>
+            <select id="user-type" name="user-type">
+              <option value="student">Student</option>
+              <option value="faculty">Faculty</option>
+              <option value="admin">Admin</option>
+              <option value="application">Application</option>
+            </select>
+
+            <label for="user-id" id="user-id-label">Student ID No.</label>
+            <input
+              id="user-id"
+              name="user-id"
+              type="text"
+              autocomplete="username"
+              placeholder="Enter your student ID"
+              required
+            />
+
+            <label for="birth-date">Date of Birth</label>
+            <input id="birth-date" name="birth-date" type="date" autocomplete="bday" required />
+
+            <label for="password" id="password-label">Password</label>
+            <input
+              id="password"
+              name="password"
+              type="password"
+              autocomplete="current-password"
+              placeholder="Enter your password"
+              required
+            />
+
+            <div class="form-actions">
+              <button class="secondary-button" type="button">Forgot Password</button>
+              <button class="primary-button" type="submit" id="submit-button">Next</button>
+            </div>
+
+            <p class="form-status" role="status" aria-live="polite"></p>
+          </form>
+        </section>
+      </section>
+
+      <img class="privacy-badge" src="assets/dpo-dps.png" alt="DPO and DPS registration badge" />
+    </main>
+
+    <footer class="site-footer">
+      <a href="#">Terms &amp; Support</a>
+      <a href="#">Privacy Policy</a>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
