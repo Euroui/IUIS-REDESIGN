@@ -440,9 +440,9 @@ h2 {
 }
 
 .dashboard-shell {
-  width: min(1220px, calc(100% - 40px));
+  width: 100%;
   min-height: calc(100vh - 136px);
-  margin: 0 auto;
+  margin: 0;
   padding: 28px 0 34px;
   display: grid;
   grid-template-columns: minmax(320px, 1.02fr) minmax(320px, 0.98fr);
@@ -455,6 +455,18 @@ h2 {
   border: 1px solid rgba(255, 255, 255, 0.65);
   border-radius: 8px;
   box-shadow: var(--shadow);
+}
+
+/* Left column touches the left edge of the page */
+.dashboard-shell > .student-card {
+  border-left: 0;
+  border-radius: 0 8px 8px 0;
+}
+
+/* Right column touches the right edge of the page */
+.progress-column > .info-card {
+  border-right: 0;
+  border-radius: 8px 0 0 8px;
 }
 
 .student-card {
@@ -717,10 +729,17 @@ h2 {
   }
 
   .dashboard-shell {
-    width: min(100% - 20px, 520px);
+    width: 100%;
     min-height: calc(100vh - 122px);
     grid-template-columns: 1fr;
     padding-top: 20px;
+  }
+
+  .dashboard-shell > .student-card,
+  .progress-column > .info-card {
+    border-left: 0;
+    border-right: 0;
+    border-radius: 0;
   }
 
   .form-actions {
@@ -750,5 +769,161 @@ h2 {
 
   .metric-grid {
     grid-template-columns: 1fr;
+  }
+}
+
+/* Loading screen between log in and the dashboard */
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.loading-screen {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(135deg, var(--blue-900), var(--blue-700));
+  opacity: 0;
+}
+
+.loading-screen[hidden] {
+  display: none;
+}
+
+.loading-screen.is-active {
+  animation: loading-backdrop 0.25s ease forwards;
+}
+
+.loading-brand {
+  max-width: 100%;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  color: #ffffff;
+
+  /* A soft band that sweeps from left to right. Whatever the band covers is
+     visible: its front edge fades the content in, its back edge fades it out. */
+  -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 12%, #000 88%, transparent 100%);
+  mask-image: linear-gradient(90deg, transparent 0%, #000 12%, #000 88%, transparent 100%);
+  -webkit-mask-size: 300% 100%;
+  mask-size: 300% 100%;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: 150% 0;
+  mask-position: 150% 0;
+}
+
+.loading-screen.is-active .loading-brand {
+  animation: loading-sweep 2.4s linear 0.15s forwards;
+}
+
+.loading-seal {
+  width: 96px;
+  height: 96px;
+  flex: none;
+  object-fit: contain;
+  background: #ffffff;
+  border-radius: 50%;
+  box-shadow: 0 8px 22px rgba(4, 30, 56, 0.35);
+}
+
+.loading-name {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  line-height: 1.15;
+  text-transform: uppercase;
+  text-shadow: 0 2px 6px rgba(8, 35, 67, 0.35);
+}
+
+.loading-name .school {
+  display: block;
+  font-size: clamp(1.15rem, 3.6vw, 2rem);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.loading-name .portal {
+  display: block;
+  margin-top: 6px;
+  color: var(--gold);
+  font-size: clamp(0.8rem, 2.4vw, 1.1rem);
+  font-weight: 400;
+  letter-spacing: 0.2em;
+}
+
+@keyframes loading-backdrop {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes loading-sweep {
+  0% {
+    -webkit-mask-position: 150% 0;
+    mask-position: 150% 0;
+    animation-timing-function: ease-out;
+  }
+  34% {
+    -webkit-mask-position: 82% 0;
+    mask-position: 82% 0;
+    animation-timing-function: linear;
+  }
+  66% {
+    -webkit-mask-position: 18% 0;
+    mask-position: 18% 0;
+    animation-timing-function: ease-in;
+  }
+  100% {
+    -webkit-mask-position: -50% 0;
+    mask-position: -50% 0;
+  }
+}
+
+@keyframes loading-fade {
+  0% {
+    opacity: 0;
+  }
+  30%,
+  70% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@media (max-width: 560px) {
+  .loading-brand {
+    flex-direction: column;
+    gap: 18px;
+    text-align: center;
+  }
+
+  .loading-seal {
+    width: 84px;
+    height: 84px;
+  }
+}
+
+/* No sweeping motion for people who ask for less: a plain fade in and out */
+@media (prefers-reduced-motion: reduce) {
+  .loading-brand {
+    -webkit-mask-image: none;
+    mask-image: none;
+  }
+
+  .loading-screen.is-active .loading-brand {
+    animation: loading-fade 1.6s ease 0.15s both;
   }
 }
