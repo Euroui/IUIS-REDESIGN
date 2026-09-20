@@ -90,7 +90,7 @@ function updateLoginBlock() {
   statusText.textContent = "";
 }
 
-// Date of birth: month / day / year dropdowns
+// Date of birth: guide users through year, then month, then day.
 
 function daysInMonth(month, year) {
   // Day 0 of the next month is the last day of this month.
@@ -100,12 +100,17 @@ function daysInMonth(month, year) {
 
 function updateDayOptions() {
   const selectedDay = Number(birthDay.value);
-  const maxDay = birthMonth.value
-    ? daysInMonth(Number(birthMonth.value), Number(birthYear.value))
-    : 31;
+  const hasYearAndMonth = birthYear.value && birthMonth.value;
 
   birthDay.length = 1; // keep the "Day" placeholder
   birthDay.selectedIndex = 0;
+  birthDay.disabled = !hasYearAndMonth;
+
+  if (!hasYearAndMonth) {
+    return;
+  }
+
+  const maxDay = daysInMonth(Number(birthMonth.value), Number(birthYear.value));
 
   for (let day = 1; day <= maxDay; day += 1) {
     birthDay.add(new Option(day, day));
@@ -117,21 +122,26 @@ function updateDayOptions() {
 }
 
 function setupBirthDate() {
-  const newestYear = new Date().getFullYear() - 10;
+  const newestYear = new Date().getFullYear();
   const oldestYear = 1940;
-
-  monthNames.forEach((name, index) => {
-    birthMonth.add(new Option(name, index + 1));
-  });
 
   for (let year = newestYear; year >= oldestYear; year -= 1) {
     birthYear.add(new Option(year, year));
   }
 
+  monthNames.forEach((name, index) => {
+    birthMonth.add(new Option(name, index + 1));
+  });
+
   updateDayOptions();
 
+  birthYear.addEventListener("change", () => {
+    birthMonth.value = "";
+    birthMonth.disabled = false;
+    updateDayOptions();
+    birthMonth.focus();
+  });
   birthMonth.addEventListener("change", updateDayOptions);
-  birthYear.addEventListener("change", updateDayOptions);
 }
 
 userTypeSelect.addEventListener("change", updateLoginBlock);

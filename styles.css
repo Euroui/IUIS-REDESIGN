@@ -321,7 +321,7 @@ h2 {
   outline: 3px solid rgba(52, 122, 179, 0.18);
 }
 
-/* Date of birth: month / day / year dropdowns */
+/* Date of birth: year / month / day dropdowns */
 
 .date-field {
   min-width: 0;
@@ -337,7 +337,7 @@ h2 {
 
 .date-selects {
   display: grid;
-  grid-template-columns: 1.5fr 1fr 1.1fr;
+  grid-template-columns: 1.1fr 1.5fr 1fr;
   gap: 8px;
 }
 
