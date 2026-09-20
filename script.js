@@ -75,6 +75,10 @@ const submitButton = document.querySelector("#submit-button");
 const birthMonth = document.querySelector("#birth-month");
 const birthDay = document.querySelector("#birth-day");
 const birthYear = document.querySelector("#birth-year");
+const loadingScreen = document.querySelector("#loading-screen");
+const loadingBrand = document.querySelector("#loading-brand");
+
+let isLoading = false;
 
 function updateLoginBlock() {
   const profile = loginProfiles[userTypeSelect.value];
@@ -144,6 +148,48 @@ function setupBirthDate() {
   birthMonth.addEventListener("change", updateDayOptions);
 }
 
+// Loading screen: the logo and school name sweep in and out from left to right,
+// then the browser moves on to the next page.
+
+function startLoading(url) {
+  if (isLoading) return;
+  isLoading = true;
+
+  submitButton.disabled = true;
+  loadingScreen.hidden = false;
+  loadingScreen.classList.add("is-active");
+
+  let done = false;
+  const goToPage = () => {
+    if (done) return;
+    done = true;
+    window.location.href = url;
+  };
+
+  // Move on when the animation finishes (the sweep, or the plain fade for reduced motion)
+  loadingBrand.addEventListener("animationend", (event) => {
+    if (event.animationName === "loading-sweep" || event.animationName === "loading-fade") {
+      goToPage();
+    }
+  });
+
+  // Safety net in case the animation event never fires
+  setTimeout(goToPage, 4000);
+}
+
+function stopLoading() {
+  isLoading = false;
+  loadingScreen.classList.remove("is-active");
+  loadingScreen.hidden = true;
+  submitButton.disabled = false;
+  statusText.textContent = "";
+}
+
+// If the person comes back with the browser's Back button, don't leave the loading screen showing
+window.addEventListener("pageshow", (event) => {
+  if (event.persisted) stopLoading();
+});
+
 userTypeSelect.addEventListener("change", updateLoginBlock);
 
 loginForm.addEventListener("submit", (event) => {
@@ -162,7 +208,7 @@ loginForm.addEventListener("submit", (event) => {
   statusText.textContent = profile.successText;
 
   if (profile.redirect) {
-    window.location.href = profile.redirect;
+    startLoading(profile.redirect);
   }
 });
 
