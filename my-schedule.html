@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><title>WVSU My Schedule</title><link rel="stylesheet" href="styles.css" /><link rel="stylesheet" href="pages.css" /></head>
+  <body class="dashboard-page">
+    <header class="site-header"><div class="header-inner"><img class="header-title" src="assets/header-title.png" width="727" height="95" alt="West Visayas State University Integrated University Information System" /><a class="header-action" href="index.html">Log Out</a></div></header>
+    <nav class="site-nav" aria-label="Student pages"><ul>
+      <li><a href="dashboard.html">Dashboard</a></li><li><a href="message.html">Message</a></li><li><a href="class-offerings.html">Class Offerings</a></li><li><a href="registration.html">Registration</a></li><li><a href="personal-information.html">Personal Information</a></li><li><a href="my-schedule.html" aria-current="page">My Schedule</a></li><li><a href="grades.html">My Grades</a></li><li><a href="my-accounts.html">My Accounts</a></li><li><a href="calendar.html">Calendar</a></li><li><a href="password.html">Password</a></li><li><a href="deficiency.html">Deficiency</a></li><li><a href="log-trail.html">Log Trail</a></li><li><a href="enrollment-confirmation.html">Enrollment Confirmation</a></li><li><a href="upload-deposit-slip.html">Upload Deposit Slip</a></li><li><a href="subject-adjustment.html">Subject Adjustment</a></li><li><a href="curriculum.html">Curriculum/Prospectus</a></li><li><a href="faculty-evaluation.html">Faculty Evaluation</a></li>
+    </ul></nav>
+    <main class="page-content">
+      <div class="page-heading">
+        <div>
+          <h1>My Schedule</h1>
+          <p>View your registered classes and meeting times.</p>
+        </div>
+      </div>
+
+      <section class="info-card schedule-card" aria-labelledby="schedule-summary-title">
+        <div class="schedule-card-heading">
+          <div>
+            <h2 class="block-title" id="schedule-summary-title">First Semester, SY 2026-2027</h2>
+            <p class="card-note">Subject meeting times and assigned instructors.</p>
+          </div>
+          <span class="status-pill is-info">6 subjects</span>
+        </div>
+        <div class="table-wrap">
+          <table class="data-table schedule-summary-table">
+            <caption class="visually-hidden">Summary of subjects, meeting days, times, and instructors</caption>
+            <thead>
+              <tr>
+                <th scope="col">Code</th>
+                <th scope="col">Subject</th>
+                <th scope="col">Days</th>
+                <th scope="col">Time</th>
+                <th scope="col">Teacher</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>IT 201</td><td>Data Structures and Algorithms</td><td><span class="meeting-line">M</span><span class="meeting-line">W</span></td><td><span class="meeting-line">8:00 AM-9:00 AM</span><span class="meeting-line">9:00 AM-11:00 AM</span></td><td>REYES, ANA B.</td></tr>
+              <tr><td>IT 202</td><td>Object-Oriented Programming</td><td>T/Th</td><td>9:00 AM-11:00 AM</td><td>VILLANUEVA, CARLO D.</td></tr>
+              <tr><td>IT 203</td><td>Networking 2</td><td>W/F</td><td>11:00 AM-12:30 PM</td><td>RAMOS, EDUARDO P.</td></tr>
+              <tr><td>IT 204</td><td>Information Management 2</td><td>M/W</td><td>1:00 PM-2:30 PM</td><td>GONZALES, LIZA M.</td></tr>
+              <tr><td>IT 205</td><td>Platform Technologies</td><td>T/Th</td><td>1:30 PM-3:00 PM</td><td>TORRES, GRACE S.</td></tr>
+              <tr><td>IT 206</td><td>Integrative Programming and Technologies</td><td>F</td><td>2:00 PM-5:00 PM</td><td>AQUINO, MARK J.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="info-card schedule-card" aria-labelledby="block-schedule-title">
+        <div class="schedule-card-heading">
+          <div>
+            <h2 class="block-title" id="block-schedule-title">Weekly block schedule</h2>
+            <p class="card-note">Monday through Saturday class blocks.</p>
+          </div>
+        </div>
+        <div class="table-wrap">
+          <table class="block-schedule-table">
+            <caption class="visually-hidden">Weekly block schedule by day and time</caption>
+            <thead>
+              <tr><th scope="col">Time</th><th scope="col">Monday</th><th scope="col">Tuesday</th><th scope="col">Wednesday</th><th scope="col">Thursday</th><th scope="col">Friday</th><th scope="col">Saturday</th></tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row">08:00-08:30</th><td class="schedule-subject" rowspan="2"><strong>IT 201</strong><small>Data Structures</small></td><td></td><td></td><td></td><td></td><td></td></tr>
+              <tr><th scope="row">08:30-09:00</th><td></td><td></td><td></td><td></td><td></td></tr>
+              <tr><th scope="row">09:00-09:30</th><td></td><td class="schedule-subject" rowspan="4"><strong>IT 202</strong><small>Object-Oriented Programming</small></td><td class="schedule-subject" rowspan="4"><strong>IT 201</strong><small>Data Structures</small></td><td class="schedule-subject" rowspan="4"><strong>IT 202</strong><small>Object-Oriented Programming</small></td><td></td><td></td></tr>
+              <tr><th scope="row">09:30-10:00</th><td></td><td></td><td></td></tr>
+              <tr><th scope="row">10:00-10:30</th><td></td><td></td><td></td></tr>
+              <tr><th scope="row">10:30-11:00</th><td></td><td></td><td></td></tr>
+              <tr><th scope="row">11:00-11:30</th><td></td><td></td><td class="schedule-subject" rowspan="3"><strong>IT 203</strong><small>Networking 2</small></td><td></td><td class="schedule-subject" rowspan="3"><strong>IT 203</strong><small>Networking 2</small></td><td></td></tr>
+              <tr><th scope="row">11:30-12:00</th><td></td><td></td><td></td><td></td></tr>
+              <tr><th scope="row">12:00-12:30</th><td></td><td></td><td></td><td></td></tr>
+              <tr><th scope="row">12:30-13:00</th><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+              <tr><th scope="row">13:00-13:30</th><td class="schedule-subject" rowspan="3"><strong>IT 204</strong><small>Information Management</small></td><td></td><td class="schedule-subject" rowspan="3"><strong>IT 204</strong><small>Information Management</small></td><td></td><td></td><td></td></tr>
+              <tr><th scope="row">13:30-14:00</th><td class="schedule-subject" rowspan="3"><strong>IT 205</strong><small>Platform Technologies</small></td><td class="schedule-subject" rowspan="3"><strong>IT 205</strong><small>Platform Technologies</small></td><td></td><td></td></tr>
+              <tr><th scope="row">14:00-14:30</th><td class="schedule-subject" rowspan="6"><strong>IT 206</strong><small>Integrative Programming</small></td><td></td></tr>
+              <tr><th scope="row">14:30-15:00</th><td></td><td></td><td></td></tr>
+              <tr><th scope="row">15:00-15:30</th><td></td><td></td><td></td><td></td><td></td></tr>
+              <tr><th scope="row">15:30-16:00</th><td></td><td></td><td></td><td></td><td></td></tr>
+              <tr><th scope="row">16:00-16:30</th><td></td><td></td><td></td><td></td><td></td></tr>
+              <tr><th scope="row">16:30-17:00</th><td></td><td></td><td></td><td></td><td></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer"><a href="#">Terms &amp; Support</a><a href="#">Privacy Policy</a></footer>
+    <script src="portal-menu.js"></script>
+  </body>
+</html>
