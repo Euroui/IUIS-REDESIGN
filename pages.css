@@ -832,33 +832,122 @@ body:not(:has(.mail-content:target)) .mail-content#inbox,
   gap: 18px;
 }
 
+.semester-picker {
+  position: relative;
+  z-index: 2;
+  width: min(360px, 100%);
+  margin-bottom: 16px;
+  color: var(--ink);
+  background: #ffffff;
+  border: 1px solid var(--blue-600);
+  border-radius: 6px;
+}
+
+.semester-picker summary {
+  padding: 12px 14px;
+  color: var(--blue-900);
+  font-weight: 800;
+  cursor: pointer;
+  list-style: none;
+}
+
+.semester-picker summary::-webkit-details-marker {
+  display: none;
+}
+
+.semester-picker summary::after {
+  content: "";
+  float: right;
+  width: 8px;
+  height: 8px;
+  margin-top: 3px;
+  border-right: 2px solid var(--blue-800);
+  border-bottom: 2px solid var(--blue-800);
+  transform: rotate(45deg);
+}
+
+.semester-picker[open] summary::after {
+  margin-top: 7px;
+  transform: rotate(-135deg);
+}
+
+.semester-picker nav {
+  padding: 6px;
+  display: grid;
+  gap: 2px;
+  border-top: 1px solid var(--line);
+}
+
+.semester-picker a {
+  padding: 9px 10px;
+  color: var(--ink);
+  border-radius: 4px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.semester-picker a:hover,
+.semester-picker a:focus-visible {
+  color: var(--blue-900);
+  background: var(--blue-100);
+  outline: none;
+}
+
+.semester-panel {
+  display: none;
+}
+
+.semester-panel#semester-first,
+.semester-panel:target {
+  display: block;
+}
+
+.page-content:has(.semester-panel:target) .semester-panel#semester-first {
+  display: none;
+}
+
+.semester-empty {
+  min-height: 170px;
+}
+
 .schedule-summary-table {
   min-width: 760px;
 }
 
 .schedule-summary-table th:nth-child(1),
 .schedule-summary-table td:nth-child(1) {
-  width: 12%;
+  width: 10%;
 }
 
 .schedule-summary-table th:nth-child(2),
 .schedule-summary-table td:nth-child(2) {
-  width: 32%;
+  width: 28%;
 }
 
 .schedule-summary-table th:nth-child(3),
 .schedule-summary-table td:nth-child(3) {
-  width: 12%;
+  width: 6%;
 }
 
 .schedule-summary-table th:nth-child(4),
 .schedule-summary-table td:nth-child(4) {
-  width: 18%;
+  width: 6%;
 }
 
 .schedule-summary-table th:nth-child(5),
 .schedule-summary-table td:nth-child(5) {
+  width: 6%;
+}
+
+.schedule-summary-table th:nth-child(6),
+.schedule-summary-table td:nth-child(6) {
   width: 26%;
+}
+
+.schedule-summary-table th:nth-child(7),
+.schedule-summary-table td:nth-child(7) {
+  width: 16%;
 }
 
 .schedule-summary-table td:nth-child(3),
