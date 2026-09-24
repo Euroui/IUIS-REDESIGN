@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 420" role="img" aria-labelledby="title desc">
+  <title id="title">Student profile illustration</title>
+  <desc id="desc">Illustrated student portrait in front of a blue background.</desc>
+  <rect width="360" height="420" fill="#d9edf8"/>
+  <circle cx="180" cy="152" r="84" fill="#f1b88c"/>
+  <path d="M93 151c4-82 42-121 91-121 56 0 88 43 84 120-19-29-47-43-83-43-34 0-64 14-92 44z" fill="#172f46"/>
+  <path d="M117 170c8 43 32 70 63 70 32 0 57-27 64-70-18 14-40 21-64 21-24 0-45-7-63-21z" fill="#f1b88c"/>
+  <circle cx="150" cy="151" r="7" fill="#172f46"/>
+  <circle cx="210" cy="151" r="7" fill="#172f46"/>
+  <path d="M160 193c12 8 28 8 40 0" fill="none" stroke="#9b543f" stroke-width="5" stroke-linecap="round"/>
+  <path d="M77 420c5-95 44-145 103-145s98 50 103 145" fill="#165c96"/>
+  <path d="M114 420c8-58 31-91 66-91s58 33 66 91" fill="#f5f8fa"/>
+  <path d="M180 275v54" stroke="#d99770" stroke-width="4"/>
+</svg>
