@@ -9,7 +9,41 @@
       <li><a href="dashboard.html">Dashboard</a></li><li><a href="message.html">Message</a></li><li><a href="class-offerings.html" aria-current="page">Class Offerings</a></li><li><a href="registration.html">Registration</a></li><li><a href="personal-information.html">Personal Information</a></li><li><a href="my-schedule.html">My Schedule</a></li><li><a href="grades.html">My Grades</a></li><li><a href="my-accounts.html">My Accounts</a></li><li><a href="calendar.html">Calendar</a></li><li><a href="password.html">Password</a></li><li><a href="deficiency.html">Deficiency</a></li><li><a href="log-trail.html">Log Trail</a></li><li><a href="enrollment-confirmation.html">Enrollment Confirmation</a></li><li><a href="upload-deposit-slip.html">Upload Deposit Slip</a></li><li><a href="subject-adjustment.html">Subject Adjustment</a></li><li><a href="faculty-evaluation.html">Faculty Evaluation</a></li>
       <li class="menu-divider" aria-hidden="true"></li><li><a href="index.html">Log out</a></li>
     </ul></nav>
-    <main class="page-content"><div class="page-heading"><div><h1>Class Offerings</h1><p>Browse subjects offered for the current academic term.</p></div></div><section class="info-card detail-card"><h2 class="block-title">First Semester, SY 2026-2027</h2><div class="table-wrap"><table class="data-table"><thead><tr><th>Code</th><th>Subject</th><th class="num">Lec</th><th class="num">Lab</th><th class="num">Units</th></tr></thead><tbody><tr><td>HUM 110</td><td>Art Appreciation</td><td class="num">3</td><td class="num">0</td><td class="num">3</td></tr><tr><td>CC 204</td><td>Data Structures and Algorithms</td><td class="num">2</td><td class="num">1</td><td class="num">3</td></tr><tr><td>SS 112</td><td>Ethics</td><td class="num">3</td><td class="num">0</td><td class="num">3</td></tr><tr><td>PATHFIT 3</td><td>Dance, Sports, Martial Arts, and Outdoor Activities</td><td class="num">2</td><td class="num">0</td><td class="num">2</td></tr><tr><td>CIT 207</td><td>Object-Oriented Programming</td><td class="num">2</td><td class="num">1</td><td class="num">3</td></tr><tr><td>CIT 206</td><td>Platform Technologies</td><td class="num">2</td><td class="num">1</td><td class="num">3</td></tr><tr><td>CIT 204</td><td>Quantitative Methods</td><td class="num">3</td><td class="num">0</td><td class="num">3</td></tr><tr><td>SS 111</td><td>The Contemporary World</td><td class="num">3</td><td class="num">0</td><td class="num">3</td></tr></tbody></table></div></section></main>
+    <main class="page-content offerings-page">
+      <div class="page-heading"><div><h1>Class Offerings</h1><p>Browse subjects offered for the current academic term.</p></div></div>
+      <section class="offering-filters" aria-labelledby="offering-filter-title">
+        <h2 id="offering-filter-title">Class Section and Schedule Offerings</h2>
+        <div class="offering-filter-grid">
+          <label for="offering-year">School Year</label><select id="offering-year"><option>2026-2027</option></select>
+          <label for="offering-semester">Semester</label><select id="offering-semester"><option>First</option></select>
+          <label for="offering-program">Program</label><select id="offering-program"><option>BSIT - Bachelor of Science in Information Technology</option></select>
+          <label for="offering-subject">Subject</label><select id="offering-subject"><option>- subject -</option><option>CC 204 - Data Structures and Algorithms</option><option>CIT 204 - Quantitative Methods</option></select>
+          <label for="offering-section">Section</label><select id="offering-section"><option>BSIT 2-B</option></select>
+          <label for="offering-day">Day</label><select id="offering-day"><option>- ALL DAY(S) -</option></select>
+          <span></span><a class="offering-action" href="#offering-results">View Offerings</a>
+        </div>
+      </section>
+
+      <section class="offering-results info-card" id="offering-results" aria-labelledby="offering-results-title">
+        <h2 id="offering-results-title">Total: 8</h2>
+        <div class="table-wrap">
+          <table class="data-table offering-table">
+            <caption class="visually-hidden">Class offerings for BSIT 2-B, First Semester, School Year 2026-2027</caption>
+            <thead><tr><th>Section</th><th>Subject Code</th><th>Subject Description</th><th>Units</th><th>Lec</th><th>Lab</th><th>Day</th><th>Time</th><th>Room</th><th>Faculty</th><th>Slots</th><th>Available Slots</th></tr></thead>
+            <tbody>
+              <tr><td>BSIT 2-B</td><td>CC 204</td><td>Data Structures and Algorithms</td><td>3</td><td>2</td><td>1</td><td>T/TH</td><td>7:00AM-10:00AM / 8:00AM-10:00AM</td><td>ICT 301 / ICT 106</td><td>Keia Joy Harder Armada</td><td>50</td><td>16</td></tr>
+              <tr><td>BSIT 2-B</td><td>CIT 204</td><td>Quantitative Methods</td><td>3</td><td>3</td><td>0</td><td>T/F</td><td>10:00AM-11:30AM</td><td>ICT 106 / ICT 306</td><td>Neiljan C. Raborar</td><td>50</td><td>16</td></tr>
+              <tr><td>BSIT 2-B</td><td>CIT 206</td><td>Platform Technologies</td><td>3</td><td>2</td><td>1</td><td>M/W</td><td>10:00AM-12:00PM / 10:00AM-1:00PM</td><td>EB 101 / ICT 207</td><td>Vijay Tangub</td><td>50</td><td>16</td></tr>
+              <tr><td>BSIT 2-B</td><td>CIT 207</td><td>Object-Oriented Programming</td><td>3</td><td>2</td><td>1</td><td>T/TH</td><td>4:00PM-6:00PM / 3:00PM-6:00PM</td><td>ICT 302</td><td>Keia Joy Harder Armada</td><td>50</td><td>16</td></tr>
+              <tr><td>BSIT 2-B</td><td>HUM 110</td><td>Art Appreciation</td><td>3</td><td>3</td><td>0</td><td>M/W</td><td>4:00PM-5:30PM</td><td>NAB 312</td><td>Lavie Mae Ramos Torrico</td><td>50</td><td>15</td></tr>
+              <tr><td>BSIT 2-B</td><td>PATHFIT 3</td><td>Menu of Dance, Sports, Martial Arts, Group Exercise, Outdoor and Adventure Activities</td><td>2</td><td>2</td><td>0</td><td>TH</td><td>10:00AM-12:00PM</td><td></td><td>Leonard Tomesa Catedrilla</td><td>50</td><td>16</td></tr>
+              <tr><td>BSIT 2-B</td><td>SS 111</td><td>The Contemporary World</td><td>3</td><td>3</td><td>0</td><td>M/W</td><td>2:30PM-4:00PM</td><td>RB 10</td><td>Andrea L. Tusiap</td><td>50</td><td>16</td></tr>
+              <tr><td>BSIT 2-B</td><td>SS 112</td><td>Ethics</td><td>3</td><td>3</td><td>0</td><td>M/W</td><td>7:00AM-8:30AM</td><td>QH 18</td><td>Nancy S. Surmieda</td><td>50</td><td>16</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </main>
     <footer class="site-footer"><a href="mailto:helpdesk@wvsu.edu.ph">Terms &amp; Support</a><a href="privacy.html">Privacy Policy</a></footer>
   </body>
 </html>

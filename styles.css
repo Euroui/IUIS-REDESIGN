@@ -666,8 +666,17 @@ h2 {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  align-items: flex-end;
+  align-items: center;
   gap: 12px;
+}
+
+.dashboard-tools .calendar-header {
+  padding-bottom: 4px;
+}
+
+.dashboard-tools .calendar-header .block-title {
+  flex: 1 1 180px;
+  min-width: 0;
 }
 
 .calendar-nav {
@@ -694,9 +703,19 @@ h2 {
 }
 
 .calendar-today {
-  padding: 0 12px;
+  min-width: 124px;
+  padding: 10px 14px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   font-size: 0.85rem;
+  line-height: 1.2;
+  white-space: nowrap;
   text-decoration: none;
+}
+
+.dashboard-tools .calendar-today {
+  flex: 0 0 auto;
 }
 
 .calendar-button:hover,
