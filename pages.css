@@ -118,13 +118,30 @@
   line-height: 1.5;
 }
 
+.schedule-intro {
+  max-width: none !important;
+  white-space: nowrap;
+}
+
+.detail-card .service-actions {
+  margin-top: 28px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.detail-card .service-actions .button-link {
+  margin: 0;
+}
+
 .grades-intro {
   max-width: none !important;
   white-space: nowrap;
 }
 
 @media (max-width: 560px) {
-  .grades-intro {
+  .grades-intro,
+  .schedule-intro {
     white-space: normal;
   }
 }
