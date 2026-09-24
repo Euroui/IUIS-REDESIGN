@@ -8,16 +8,14 @@
     <link rel="stylesheet" href="pages.css" />
   </head>
   <body class="dashboard-page">
+    <input class="menu-checkbox page-menu-checkbox" id="page-menu-toggle" type="checkbox" aria-label="Toggle student pages" />
+    <label class="menu-toggle page-menu-toggle" for="page-menu-toggle" aria-label="Toggle student pages"><span></span><span></span><span></span></label>
     <header class="site-header">
       <div class="header-inner">
-        <img
-          class="header-title"
-          src="assets/header-title.png"
-          width="727"
-          height="95"
-          alt="West Visayas State University Integrated University Information System"
-        />
-        <a class="header-action" href="index.html">Log Out</a>
+        <p class="header-title">
+          <span class="school">West Visayas State University</span>
+          <span class="portal">Main Campus Portal</span>
+        </p>
       </div>
     </header>
 
@@ -38,8 +36,9 @@
         <li><a href="enrollment-confirmation.html">Enrollment Confirmation</a></li>
         <li><a href="upload-deposit-slip.html">Upload Deposit Slip</a></li>
         <li><a href="subject-adjustment.html">Subject Adjustment</a></li>
-        <li><a href="curriculum.html">Curriculum/Prospectus</a></li>
         <li><a href="faculty-evaluation.html">Faculty Evaluation</a></li>
+        <li class="menu-divider" aria-hidden="true"></li>
+        <li><a href="index.html">Log out</a></li>
       </ul>
     </nav>
 
@@ -47,12 +46,12 @@
       <div class="page-heading">
         <div>
           <h1>My Grades</h1>
-          <p>Your grades for every term you have been enrolled in, newest first.</p>
+          <p>School Year 2026-2027. View your enrolled courses and grades by semester.</p>
         </div>
       </div>
 
       <section class="info-card summary-card" aria-labelledby="grade-summary-title">
-        <h2 class="block-title" id="grade-summary-title">Academic Summary</h2>
+        <h2 class="block-title" id="grade-summary-title">Academic Summary | SY 2026-2027</h2>
         <dl class="metric-grid metric-grid--wide">
           <div><dt>Overall GWA</dt><dd>1.32</dd></div>
           <div><dt>Total Units</dt><dd>69</dd></div>
@@ -60,11 +59,29 @@
           <div><dt>Terms Completed</dt><dd>3</dd></div>
         </dl>
         <p class="card-note">Overall GWA is computed from academic units only. Non-academic units, such as NSTP, are not included.</p>
+        <a class="outline-button button-link" href="print_curriculum_file.pdf" target="_blank" rel="noopener">Print Curriculum/Prospectus (PDF)</a>
       </section>
 
       <div class="term-list">
-        <details class="info-card term-details" open><summary><h3 class="summary-title">Second Semester, SY 2025-2026</h3><span class="summary-meta">GWA 1.32</span></summary><div class="table-wrap"><table class="data-table"><thead><tr><th>Code</th><th>Course title</th><th class="num">Units</th><th>Grade</th></tr></thead><tbody><tr><td>GEC 6</td><td>Art Appreciation</td><td class="num">3</td><td class="grade">1.25</td></tr><tr><td>GEC 7</td><td>Science, Technology and Society</td><td class="num">3</td><td class="grade">1.25</td></tr><tr><td>IT 104</td><td>Computer Programming 2</td><td class="num">3</td><td class="grade">1.00</td></tr><tr><td>NSTP 2</td><td>National Service Training Program 2</td><td class="num">3</td><td class="grade">1.00</td></tr></tbody></table></div></details>
-        <details class="info-card term-details"><summary><h3 class="summary-title">First Semester, SY 2025-2026</h3><span class="summary-meta">GWA 1.34</span></summary><div class="table-wrap"><table class="data-table"><thead><tr><th>Code</th><th>Course title</th><th class="num">Units</th><th>Grade</th></tr></thead><tbody><tr><td>GEC 1</td><td>Understanding the Self</td><td class="num">3</td><td class="grade">1.25</td></tr><tr><td>GEC 2</td><td>Readings in Philippine History</td><td class="num">3</td><td class="grade">1.50</td></tr><tr><td>IT 101</td><td>Introduction to Computing</td><td class="num">3</td><td class="grade">1.00</td></tr><tr><td>NSTP 1</td><td>National Service Training Program 1</td><td class="num">3</td><td class="grade">1.00</td></tr></tbody></table></div></details>
+        <details class="info-card term-details current-term" open>
+          <summary><h3 class="summary-title">First Semester, Second Year | SY 2026-2027</h3><span class="summary-meta is-gwa">GWA: Pending</span><span class="status-pill is-pending term-status">In progress</span></summary>
+          <div class="table-wrap">
+            <table class="data-table grades-table">
+              <caption class="visually-hidden">First Semester, Second Year, School Year 2026-2027 grades</caption>
+              <thead><tr><th scope="col">Course No.</th><th scope="col">Course title</th><th scope="col">Instructor</th><th class="num" scope="col">Units</th><th class="num" scope="col">Midterm grade</th><th class="num" scope="col">Final grade</th><th scope="col">Completion status</th></tr></thead>
+              <tbody>
+                <tr><td>IT 201</td><td>Data Structures and Algorithms</td><td>Reyes, Ana B.</td><td class="num">3</td><td class="num grade-empty">-</td><td class="num grade-empty">-</td><td><span class="grade-status is-pending">In progress</span></td></tr>
+                <tr><td>IT 202</td><td>Object-Oriented Programming</td><td>Villanueva, Carlo D.</td><td class="num">3</td><td class="num grade-empty">-</td><td class="num grade-empty">-</td><td><span class="grade-status is-pending">In progress</span></td></tr>
+                <tr><td>IT 203</td><td>Networking 2</td><td>Ramos, Eduardo P.</td><td class="num">3</td><td class="num grade-empty">-</td><td class="num grade-empty">-</td><td><span class="grade-status is-pending">In progress</span></td></tr>
+                <tr><td>IT 204</td><td>Information Management 2</td><td>Gonzales, Liza M.</td><td class="num">3</td><td class="num grade-empty">-</td><td class="num grade-empty">-</td><td><span class="grade-status is-pending">In progress</span></td></tr>
+                <tr><td>IT 205</td><td>Platform Technologies</td><td>Torres, Grace S.</td><td class="num">3</td><td class="num grade-empty">-</td><td class="num grade-empty">-</td><td><span class="grade-status is-pending">In progress</span></td></tr>
+                <tr><td>IT 206</td><td>Integrative Programming and Technologies</td><td>Aquino, Mark J.</td><td class="num">3</td><td class="num grade-empty">-</td><td class="num grade-empty">-</td><td><span class="grade-status is-pending">In progress</span></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </details>
+        <details class="info-card term-details" open><summary><h3 class="summary-title">Second Semester, SY 2025-2026</h3><span class="summary-meta is-gwa">GWA: 1.32</span><span class="status-pill term-status">Completed</span></summary><div class="table-wrap"><table class="data-table"><thead><tr><th>Code</th><th>Course title</th><th class="num">Units</th><th>Grade</th></tr></thead><tbody><tr><td>GEC 6</td><td>Art Appreciation</td><td class="num">3</td><td class="grade">1.25</td></tr><tr><td>GEC 7</td><td>Science, Technology and Society</td><td class="num">3</td><td class="grade">1.25</td></tr><tr><td>IT 104</td><td>Computer Programming 2</td><td class="num">3</td><td class="grade">1.00</td></tr><tr><td>NSTP 2</td><td>National Service Training Program 2</td><td class="num">3</td><td class="grade">1.00</td></tr></tbody></table></div></details>
+        <details class="info-card term-details"><summary><h3 class="summary-title">First Semester, SY 2025-2026</h3><span class="summary-meta is-gwa">GWA: 1.34</span><span class="status-pill term-status">Completed</span></summary><div class="table-wrap"><table class="data-table"><thead><tr><th>Code</th><th>Course title</th><th class="num">Units</th><th>Grade</th></tr></thead><tbody><tr><td>GEC 1</td><td>Understanding the Self</td><td class="num">3</td><td class="grade">1.25</td></tr><tr><td>GEC 2</td><td>Readings in Philippine History</td><td class="num">3</td><td class="grade">1.50</td></tr><tr><td>IT 101</td><td>Introduction to Computing</td><td class="num">3</td><td class="grade">1.00</td></tr><tr><td>NSTP 1</td><td>National Service Training Program 1</td><td class="num">3</td><td class="grade">1.00</td></tr></tbody></table></div></details>
       </div>
     </main>
 

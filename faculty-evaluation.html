@@ -8,16 +8,14 @@
     <link rel="stylesheet" href="pages.css" />
   </head>
   <body class="dashboard-page">
+    <input class="menu-checkbox page-menu-checkbox" id="page-menu-toggle" type="checkbox" aria-label="Toggle student pages" />
+    <label class="menu-toggle page-menu-toggle" for="page-menu-toggle" aria-label="Toggle student pages"><span></span><span></span><span></span></label>
     <header class="site-header">
       <div class="header-inner">
-        <img
-          class="header-title"
-          src="assets/header-title.png"
-          width="727"
-          height="95"
-          alt="West Visayas State University Integrated University Information System"
-        />
-        <a class="header-action" href="index.html">Log Out</a>
+        <p class="header-title">
+          <span class="school">West Visayas State University</span>
+          <span class="portal">Main Campus Portal</span>
+        </p>
       </div>
     </header>
 
@@ -38,8 +36,9 @@
         <li><a href="enrollment-confirmation.html">Enrollment Confirmation</a></li>
         <li><a href="upload-deposit-slip.html">Upload Deposit Slip</a></li>
         <li><a href="subject-adjustment.html">Subject Adjustment</a></li>
-        <li><a href="curriculum.html">Curriculum/Prospectus</a></li>
         <li><a href="faculty-evaluation.html" aria-current="page">Faculty Evaluation</a></li>
+        <li class="menu-divider" aria-hidden="true"></li>
+        <li><a href="index.html">Log out</a></li>
       </ul>
     </nav>
 
@@ -47,32 +46,16 @@
       <div class="page-heading">
         <div>
           <h1>Faculty Evaluation</h1>
-          <p id="term-label">Rate each of your instructors for this semester.</p>
+          <p>Rate each of your instructors for this semester.</p>
         </div>
       </div>
 
-      <section class="info-card evaluation-summary" aria-label="Evaluation progress">
-        <p class="evaluation-count">1 of 6 evaluations completed</p>
-        <div class="progress-meter" role="img" aria-label="17 percent of evaluations completed"><span style="width: 17%"></span></div>
-      </section>
-
-      <section class="evaluation-list" aria-label="Courses for evaluation">
-        <article class="info-card evaluation-item"><div><h2 class="block-title">IT 201 - Data Structures and Algorithms</h2><p class="card-note">REYES, ANA B.</p></div><a class="outline-button button-link" href="#evaluation-form">Evaluate</a></article>
-        <article class="info-card evaluation-item"><div><h2 class="block-title">IT 202 - Object-Oriented Programming</h2><p class="card-note">VILLANUEVA, CARLO D.</p></div><a class="outline-button button-link" href="#evaluation-form">Evaluate</a></article>
-        <article class="info-card evaluation-item"><div><h2 class="block-title">GE 8 - Ethics</h2><p class="card-note">Evaluation completed</p></div><span class="status-pill">Completed</span></article>
+      <section class="info-card evaluation-closed" aria-labelledby="evaluation-closed-title">
+        <h2 class="block-title" id="evaluation-closed-title">Evaluation unavailable at the moment</h2>
+        <p class="card-note">Faculty evaluation is currently closed for First Semester, SY 2026-2027. The evaluation form will be available when the evaluation period opens.</p>
+        <span class="status-pill is-pending">Closed</span>
       </section>
     </main>
-
-    <section class="evaluation-form info-card" id="evaluation-form" aria-labelledby="evaluation-form-title">
-      <h2 class="block-title" id="evaluation-form-title">Evaluation form</h2>
-      <p class="card-note">Rate each statement from 1 to 5, then send your feedback to Academic Affairs.</p>
-      <form class="login-form" action="mailto:academic-affairs@wvsu.edu.ph" method="post" enctype="text/plain">
-        <label for="course-evaluation">Course</label><select id="course-evaluation" name="course"><option>IT 201 - Data Structures and Algorithms</option><option>IT 202 - Object-Oriented Programming</option></select>
-        <label for="teaching-quality">Teaching quality</label><select id="teaching-quality" name="teaching-quality" required><option value="">Choose a rating</option><option>5 - Outstanding</option><option>4 - Very satisfactory</option><option>3 - Satisfactory</option><option>2 - Fair</option><option>1 - Poor</option></select>
-        <label for="evaluation-comments">Comments</label><textarea id="evaluation-comments" name="comments" rows="4"></textarea>
-        <button class="primary-button" type="submit">Submit evaluation</button>
-      </form>
-    </section>
 
     <footer class="site-footer">
       <a href="mailto:helpdesk@wvsu.edu.ph">Terms &amp; Support</a>

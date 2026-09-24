@@ -8,11 +8,123 @@
     <link rel="stylesheet" href="pages.css" />
   </head>
   <body class="dashboard-page">
-    <header class="site-header"><div class="header-inner"><img class="header-title" src="assets/header-title.png" width="727" height="95" alt="West Visayas State University Integrated University Information System" /><a class="header-action" href="index.html">Log Out</a></div></header>
+    <input class="menu-checkbox page-menu-checkbox" id="page-menu-toggle" type="checkbox" aria-label="Toggle student pages" />
+    <label class="menu-toggle page-menu-toggle" for="page-menu-toggle" aria-label="Toggle student pages"><span></span><span></span><span></span></label>
+    <header class="site-header"><div class="header-inner"><p class="header-title"><span class="school">West Visayas State University</span><span class="portal">Main Campus Portal</span></p></div></header>
     <nav class="site-nav" aria-label="Student pages"><ul>
-      <li><a href="dashboard.html">Dashboard</a></li><li><a href="message.html" aria-current="page">Message</a></li><li><a href="class-offerings.html">Class Offerings</a></li><li><a href="registration.html">Registration</a></li><li><a href="personal-information.html">Personal Information</a></li><li><a href="my-schedule.html">My Schedule</a></li><li><a href="grades.html">My Grades</a></li><li><a href="my-accounts.html">My Accounts</a></li><li><a href="calendar.html">Calendar</a></li><li><a href="password.html">Password</a></li><li><a href="deficiency.html">Deficiency</a></li><li><a href="log-trail.html">Log Trail</a></li><li><a href="enrollment-confirmation.html">Enrollment Confirmation</a></li><li><a href="upload-deposit-slip.html">Upload Deposit Slip</a></li><li><a href="subject-adjustment.html">Subject Adjustment</a></li><li><a href="curriculum.html">Curriculum/Prospectus</a></li><li><a href="faculty-evaluation.html">Faculty Evaluation</a></li>
+      <li><a href="dashboard.html">Dashboard</a></li><li><a href="message.html" aria-current="page">Message</a></li><li><a href="class-offerings.html">Class Offerings</a></li><li><a href="registration.html">Registration</a></li><li><a href="personal-information.html">Personal Information</a></li><li><a href="my-schedule.html">My Schedule</a></li><li><a href="grades.html">My Grades</a></li><li><a href="my-accounts.html">My Accounts</a></li><li><a href="calendar.html">Calendar</a></li><li><a href="password.html">Password</a></li><li><a href="deficiency.html">Deficiency</a></li><li><a href="log-trail.html">Log Trail</a></li><li><a href="enrollment-confirmation.html">Enrollment Confirmation</a></li><li><a href="upload-deposit-slip.html">Upload Deposit Slip</a></li><li><a href="subject-adjustment.html">Subject Adjustment</a></li><li><a href="faculty-evaluation.html">Faculty Evaluation</a></li>
+      <li class="menu-divider" aria-hidden="true"></li><li><a href="index.html">Log out</a></li>
     </ul></nav>
-    <main class="page-content"><div class="page-heading"><div><h1>Message</h1><p>View announcements and messages from the university.</p></div></div><section class="info-card detail-card"><h2 class="block-title">No new messages</h2><p class="card-note">University announcements and account messages will appear here.</p></section></main>
+    <main class="page-content messages-page">
+      <div class="page-heading">
+        <div>
+          <h1>Message</h1>
+          <p>Read, organize, and compose university messages.</p>
+        </div>
+        <label class="primary-button compose-button" for="compose-toggle">Compose</label>
+      </div>
+
+      <input class="compose-toggle" id="compose-toggle" type="checkbox" />
+      <div class="mail-layout">
+        <aside class="mail-sidebar" aria-label="Message folders">
+          <h2 class="visually-hidden">Folders</h2>
+          <a class="mail-folder is-active" href="#inbox"><span>Inbox</span><strong>3</strong></a>
+          <a class="mail-folder" href="#drafts"><span>Drafts</span><strong>1</strong></a>
+          <a class="mail-folder" href="#sent"><span>Sent</span></a>
+          <a class="mail-folder" href="#trash"><span>Trash</span></a>
+        </aside>
+
+        <section class="mail-content" id="inbox" aria-labelledby="inbox-title">
+          <div class="mail-toolbar">
+            <form class="message-search" action="message.html" method="get" role="search">
+              <label class="visually-hidden" for="message-search-input">Search messages</label>
+              <input id="message-search-input" name="q" type="search" placeholder="Search messages" />
+              <button class="search-button" type="submit" aria-label="Search messages">Search</button>
+            </form>
+            <label class="message-filter">
+              <span>Filter</span>
+              <select name="message-filter" aria-label="Filter messages">
+                <option>All messages</option>
+                <option>Unread</option>
+                <option>Announcements</option>
+                <option>Sent by me</option>
+              </select>
+            </label>
+          </div>
+
+          <div class="message-list" aria-label="Message history">
+            <article class="message-row is-unread">
+              <span class="message-indicator" aria-hidden="true"></span>
+              <div class="message-row-main">
+                <div class="message-row-top"><strong>Office of the University Registrar</strong><time datetime="2026-09-24">Sep 24</time></div>
+                <h2>Reminder: Verify your enrollment details</h2>
+                <p>Please review your registered subjects and personal information before the enrollment confirmation deadline.</p>
+              </div>
+            </article>
+            <article class="message-row">
+              <span class="message-indicator" aria-hidden="true"></span>
+              <div class="message-row-main">
+                <div class="message-row-top"><strong>Student Affairs Office</strong><time datetime="2026-09-20">Sep 20</time></div>
+                <h2>Student wellness orientation</h2>
+                <p>The student wellness orientation will be held at the Main Campus Activity Center.</p>
+              </div>
+            </article>
+            <article class="message-row">
+              <span class="message-indicator" aria-hidden="true"></span>
+              <div class="message-row-main">
+                <div class="message-row-top"><strong>Information Technology Services</strong><time datetime="2026-09-16">Sep 16</time></div>
+                <h2>Scheduled portal maintenance</h2>
+                <p>The student portal may be unavailable during the scheduled maintenance window.</p>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section class="mail-content" id="drafts" aria-labelledby="drafts-title">
+          <div class="folder-heading"><h2 class="block-title" id="drafts-title">Drafts</h2><span class="status-pill is-info">1 draft</span></div>
+          <article class="message-row">
+            <span class="message-indicator" aria-hidden="true"></span>
+            <div class="message-row-main">
+              <div class="message-row-top"><strong>Draft message</strong><time datetime="2026-09-24">Today</time></div>
+              <h2>Question about enrollment confirmation</h2>
+              <p>Continue writing this message to the Registrar’s Office.</p>
+            </div>
+          </article>
+        </section>
+
+        <section class="mail-content" id="sent" aria-labelledby="sent-title">
+          <div class="folder-heading"><h2 class="block-title" id="sent-title">Sent</h2></div>
+          <article class="message-row">
+            <span class="message-indicator" aria-hidden="true"></span>
+            <div class="message-row-main">
+              <div class="message-row-top"><strong>To: Registrar’s Office</strong><time datetime="2026-09-18">Sep 18</time></div>
+              <h2>Request for student record update</h2>
+              <p>Your message was sent successfully.</p>
+            </div>
+          </article>
+        </section>
+
+        <section class="mail-content" id="trash" aria-labelledby="trash-title">
+          <div class="folder-heading"><h2 class="block-title" id="trash-title">Trash</h2></div>
+          <p class="empty-folder">Messages moved to Trash will appear here.</p>
+        </section>
+      </div>
+
+      <div class="compose-backdrop">
+        <section class="compose-panel" role="dialog" aria-labelledby="compose-title">
+          <div class="compose-header"><h2 id="compose-title">New message</h2><label for="compose-toggle" aria-label="Close compose window">&times;</label></div>
+          <form action="message.html" method="get">
+            <label for="recipient">To</label>
+            <input id="recipient" name="recipient" type="email" placeholder="recipient@wvsu.edu.ph" required />
+            <label for="message-subject">Subject</label>
+            <input id="message-subject" name="subject" type="text" required />
+            <label for="message-body">Message</label>
+            <textarea id="message-body" name="body" rows="7" required></textarea>
+            <div class="compose-actions"><button class="primary-button" type="submit">Send</button><label class="secondary-button" for="compose-toggle">Save draft</label></div>
+          </form>
+        </section>
+      </div>
+    </main>
     <footer class="site-footer"><a href="mailto:helpdesk@wvsu.edu.ph">Terms &amp; Support</a><a href="privacy.html">Privacy Policy</a></footer>
   </body>
 </html>

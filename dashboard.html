@@ -8,48 +8,39 @@
     <link rel="stylesheet" href="pages.css" />
   </head>
   <body class="dashboard-page">
+    <input class="menu-checkbox page-menu-checkbox" id="page-menu-toggle" type="checkbox" aria-label="Toggle student pages" />
+    <label class="menu-toggle page-menu-toggle" for="page-menu-toggle" aria-label="Toggle student pages"><span></span><span></span><span></span></label>
     <header class="site-header">
-      <div class="header-inner has-menu">
-        <img
-          class="header-title"
-          src="assets/header-title.png"
-          width="727"
-          height="95"
-          alt="West Visayas State University Integrated University Information System"
-        />
-        <div class="nav-menu">
-          <input class="menu-checkbox" id="menu-toggle" type="checkbox" aria-label="Toggle student pages" />
-          <label class="menu-toggle" for="menu-toggle" aria-label="Toggle student pages">
-            <span></span>
-            <span></span>
-            <span></span>
-          </label>
-          <nav class="menu-panel" id="site-menu" aria-label="Student pages">
-            <ul>
-              <li><a href="dashboard.html" aria-current="page">Dashboard</a></li>
-              <li><a href="message.html">Message</a></li>
-              <li><a href="class-offerings.html">Class Offerings</a></li>
-              <li><a href="registration.html">Registration</a></li>
-              <li><a href="personal-information.html">Personal Information</a></li>
-              <li><a href="my-schedule.html">My Schedule</a></li>
-              <li><a href="grades.html">My Grades</a></li>
-              <li><a href="my-accounts.html">My Accounts</a></li>
-              <li><a href="calendar.html">Calendar</a></li>
-              <li><a href="password.html">Password</a></li>
-              <li><a href="deficiency.html">Deficiency</a></li>
-              <li><a href="log-trail.html">Log Trail</a></li>
-              <li><a href="enrollment-confirmation.html">Enrollment Confirmation</a></li>
-              <li><a href="upload-deposit-slip.html">Upload Deposit Slip</a></li>
-              <li><a href="subject-adjustment.html">Subject Adjustment</a></li>
-              <li><a href="curriculum.html">Curriculum/Prospectus</a></li>
-              <li><a href="faculty-evaluation.html">Faculty Evaluation</a></li>
-              <li><div class="menu-divider" role="separator"></div></li>
-              <li><a href="index.html">Log Out</a></li>
-            </ul>
-          </nav>
-        </div>
+      <div class="header-inner">
+        <p class="header-title">
+          <span class="school">West Visayas State University</span>
+          <span class="portal">Main Campus Portal</span>
+        </p>
       </div>
     </header>
+
+    <nav class="site-nav" aria-label="Student pages">
+      <ul>
+        <li><a href="dashboard.html" aria-current="page">Dashboard</a></li>
+        <li><a href="message.html">Message</a></li>
+        <li><a href="class-offerings.html">Class Offerings</a></li>
+        <li><a href="registration.html">Registration</a></li>
+        <li><a href="personal-information.html">Personal Information</a></li>
+        <li><a href="my-schedule.html">My Schedule</a></li>
+        <li><a href="grades.html">My Grades</a></li>
+        <li><a href="my-accounts.html">My Accounts</a></li>
+        <li><a href="calendar.html">Calendar</a></li>
+        <li><a href="password.html">Password</a></li>
+        <li><a href="deficiency.html">Deficiency</a></li>
+        <li><a href="log-trail.html">Log Trail</a></li>
+        <li><a href="enrollment-confirmation.html">Enrollment Confirmation</a></li>
+        <li><a href="upload-deposit-slip.html">Upload Deposit Slip</a></li>
+        <li><a href="subject-adjustment.html">Subject Adjustment</a></li>
+        <li><a href="faculty-evaluation.html">Faculty Evaluation</a></li>
+        <li class="menu-divider" aria-hidden="true"></li>
+        <li><a href="index.html">Log out</a></li>
+      </ul>
+    </nav>
 
     <main class="dashboard-shell">
       <section class="student-card info-card" aria-labelledby="student-info-title">
@@ -103,7 +94,7 @@
         <article class="info-card progress-card" aria-labelledby="progress-title">
           <div class="progress-copy">
             <h2 class="block-title" id="progress-title">
-              <a class="title-link" href="curriculum.html">Overall Student Progress</a>
+              Overall Student Progress
             </h2>
             <p>You have completed 32% of the classes in your assigned curriculum.</p>
           </div>
@@ -137,7 +128,7 @@
           <p class="card-note">
             You can view the details in
             <a class="inline-link" href="grades.html">My Grades</a> and
-            <a class="inline-link" href="curriculum.html">Curriculum/Prospectus</a>.
+            your curriculum progress.
           </p>
         </article>
 

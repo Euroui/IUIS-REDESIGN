@@ -8,16 +8,14 @@
     <link rel="stylesheet" href="pages.css" />
   </head>
   <body class="dashboard-page">
+    <input class="menu-checkbox page-menu-checkbox" id="page-menu-toggle" type="checkbox" aria-label="Toggle student pages" />
+    <label class="menu-toggle page-menu-toggle" for="page-menu-toggle" aria-label="Toggle student pages"><span></span><span></span><span></span></label>
     <header class="site-header">
       <div class="header-inner">
-        <img
-          class="header-title"
-          src="assets/header-title.png"
-          width="727"
-          height="95"
-          alt="West Visayas State University Integrated University Information System"
-        />
-        <a class="header-action" href="index.html">Log Out</a>
+        <p class="header-title">
+          <span class="school">West Visayas State University</span>
+          <span class="portal">Main Campus Portal</span>
+        </p>
       </div>
     </header>
 
@@ -38,8 +36,9 @@
         <li><a href="enrollment-confirmation.html">Enrollment Confirmation</a></li>
         <li><a href="upload-deposit-slip.html">Upload Deposit Slip</a></li>
         <li><a href="subject-adjustment.html">Subject Adjustment</a></li>
-        <li><a href="curriculum.html">Curriculum/Prospectus</a></li>
         <li><a href="faculty-evaluation.html">Faculty Evaluation</a></li>
+        <li class="menu-divider" aria-hidden="true"></li>
+        <li><a href="index.html">Log out</a></li>
       </ul>
     </nav>
 

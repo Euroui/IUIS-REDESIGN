@@ -2,11 +2,51 @@
 <html lang="en">
   <head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><title>WVSU Calendar</title><link rel="stylesheet" href="styles.css" /><link rel="stylesheet" href="pages.css" /></head>
   <body class="dashboard-page">
-    <header class="site-header"><div class="header-inner"><img class="header-title" src="assets/header-title.png" width="727" height="95" alt="West Visayas State University Integrated University Information System" /><a class="header-action" href="index.html">Log Out</a></div></header>
+    <input class="menu-checkbox page-menu-checkbox" id="page-menu-toggle" type="checkbox" aria-label="Toggle student pages" />
+    <label class="menu-toggle page-menu-toggle" for="page-menu-toggle" aria-label="Toggle student pages"><span></span><span></span><span></span></label>
+    <header class="site-header"><div class="header-inner"><p class="header-title"><span class="school">West Visayas State University</span><span class="portal">Main Campus Portal</span></p></div></header>
     <nav class="site-nav" aria-label="Student pages"><ul>
-      <li><a href="dashboard.html">Dashboard</a></li><li><a href="message.html">Message</a></li><li><a href="class-offerings.html">Class Offerings</a></li><li><a href="registration.html">Registration</a></li><li><a href="personal-information.html">Personal Information</a></li><li><a href="my-schedule.html">My Schedule</a></li><li><a href="grades.html">My Grades</a></li><li><a href="my-accounts.html">My Accounts</a></li><li><a href="calendar.html" aria-current="page">Calendar</a></li><li><a href="password.html">Password</a></li><li><a href="deficiency.html">Deficiency</a></li><li><a href="log-trail.html">Log Trail</a></li><li><a href="enrollment-confirmation.html">Enrollment Confirmation</a></li><li><a href="upload-deposit-slip.html">Upload Deposit Slip</a></li><li><a href="subject-adjustment.html">Subject Adjustment</a></li><li><a href="curriculum.html">Curriculum/Prospectus</a></li><li><a href="faculty-evaluation.html">Faculty Evaluation</a></li>
+      <li><a href="dashboard.html">Dashboard</a></li><li><a href="message.html">Message</a></li><li><a href="class-offerings.html">Class Offerings</a></li><li><a href="registration.html">Registration</a></li><li><a href="personal-information.html">Personal Information</a></li><li><a href="my-schedule.html">My Schedule</a></li><li><a href="grades.html">My Grades</a></li><li><a href="my-accounts.html">My Accounts</a></li><li><a href="calendar.html" aria-current="page">Calendar</a></li><li><a href="password.html">Password</a></li><li><a href="deficiency.html">Deficiency</a></li><li><a href="log-trail.html">Log Trail</a></li><li><a href="enrollment-confirmation.html">Enrollment Confirmation</a></li><li><a href="upload-deposit-slip.html">Upload Deposit Slip</a></li><li><a href="subject-adjustment.html">Subject Adjustment</a></li><li><a href="faculty-evaluation.html">Faculty Evaluation</a></li>
+      <li class="menu-divider" aria-hidden="true"></li><li><a href="index.html">Log out</a></li>
     </ul></nav>
-    <main class="page-content"><div class="page-heading"><div><h1>Calendar</h1><p>Keep track of academic dates and university events.</p></div></div><section class="info-card detail-card"><h2 class="block-title">Academic calendar</h2><p class="card-note">Important academic dates and events will be posted here.</p></section></main>
+    <main class="page-content">
+      <div class="page-heading">
+        <div>
+          <h1>Calendar</h1>
+          <p>Keep track of academic dates and university events.</p>
+        </div>
+      </div>
+
+      <div class="calendar-page-grid">
+        <section class="info-card calendar-card" aria-labelledby="calendar-title">
+          <div class="calendar-header">
+            <h2 class="block-title" id="calendar-title">September 2026</h2>
+            <span class="status-pill is-info">First semester</span>
+          </div>
+          <table class="calendar-grid">
+            <caption class="visually-hidden">September 2026 academic calendar</caption>
+            <thead><tr><th scope="col">Sun</th><th scope="col">Mon</th><th scope="col">Tue</th><th scope="col">Wed</th><th scope="col">Thu</th><th scope="col">Fri</th><th scope="col">Sat</th></tr></thead>
+            <tbody>
+              <tr><td class="is-outside" aria-hidden="true"><span class="calendar-day">30</span></td><td class="is-outside" aria-hidden="true"><span class="calendar-day">31</span></td><td><span class="calendar-day">1</span></td><td><span class="calendar-day">2</span></td><td><span class="calendar-day">3</span></td><td><span class="calendar-day">4</span></td><td><span class="calendar-day">5</span></td></tr>
+              <tr><td><span class="calendar-day">6</span></td><td><span class="calendar-day">7</span></td><td><span class="calendar-day">8</span></td><td><span class="calendar-day">9</span></td><td><span class="calendar-day">10</span></td><td><span class="calendar-day">11</span></td><td><span class="calendar-day">12</span></td></tr>
+              <tr><td><span class="calendar-day">13</span></td><td><span class="calendar-day">14</span></td><td><span class="calendar-day">15</span></td><td><span class="calendar-day">16</span></td><td><span class="calendar-day">17</span></td><td><span class="calendar-day">18</span></td><td><span class="calendar-day">19</span></td></tr>
+              <tr><td><span class="calendar-day">20</span></td><td><span class="calendar-day">21</span></td><td><span class="calendar-day">22</span></td><td><span class="calendar-day">23</span></td><td aria-current="date"><span class="calendar-day">24</span></td><td><span class="calendar-day">25</span></td><td><span class="calendar-day">26</span></td></tr>
+              <tr><td><span class="calendar-day">27</span></td><td><span class="calendar-day">28</span></td><td><span class="calendar-day">29</span></td><td><span class="calendar-day">30</span></td><td class="is-outside" aria-hidden="true"><span class="calendar-day">1</span></td><td class="is-outside" aria-hidden="true"><span class="calendar-day">2</span></td><td class="is-outside" aria-hidden="true"><span class="calendar-day">3</span></td></tr>
+            </tbody>
+          </table>
+          <p class="calendar-legend"><span class="calendar-legend-dot" aria-hidden="true"></span> Today</p>
+        </section>
+
+        <section class="info-card upcoming-card" aria-labelledby="upcoming-title">
+          <div class="calendar-header"><h2 class="block-title" id="upcoming-title">Upcoming dates</h2></div>
+          <ul class="event-list">
+            <li><time datetime="2026-09-24">Sep 24</time><div><strong>Enrollment confirmation</strong><span>Review and confirm your enrollment details.</span></div></li>
+            <li><time datetime="2026-09-30">Sep 30</time><div><strong>Payment deadline</strong><span>Submit outstanding account requirements.</span></div></li>
+            <li><time datetime="2026-10-05">Oct 5</time><div><strong>Faculty evaluation opens</strong><span>Share feedback for your current instructors.</span></div></li>
+          </ul>
+        </section>
+      </div>
+    </main>
     <footer class="site-footer"><a href="mailto:helpdesk@wvsu.edu.ph">Terms &amp; Support</a><a href="privacy.html">Privacy Policy</a></footer>
   </body>
 </html>
