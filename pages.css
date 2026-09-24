@@ -66,7 +66,8 @@
 
 /* Signed-in pages use the same header dropdown as the dashboard. */
 .dashboard-page .site-nav {
-  display: none;
+  display: block;
+  background: var(--blue-900);
 }
 
 /* ---------- Page layout ---------- */

@@ -65,23 +65,48 @@
 
         <article class="info-card summary-card" aria-labelledby="units-title">
           <h2 class="block-title" id="units-title">Units so far</h2>
-          <dl class="metric-grid" id="unit-summary"></dl>
+          <dl class="metric-grid metric-grid--wide">
+            <div><dt>Total Units Earned</dt><dd>69</dd></div>
+            <div><dt>Academic Units</dt><dd>63</dd></div>
+            <div><dt>Non-Academic Units</dt><dd>6</dd></div>
+            <div><dt>Terms Completed</dt><dd>3</dd></div>
+          </dl>
           <p class="card-note">
             Grades for each class are in <a class="inline-link" href="grades.html">My Grades</a>.
           </p>
         </article>
       </div>
 
-      <div class="term-list" id="year-groups"></div>
+      <div class="term-list">
+        <section class="year-group" aria-labelledby="first-year-title">
+          <h2 class="year-title" id="first-year-title">First Year</h2>
+          <details class="info-card term-details" open>
+            <summary><h3 class="summary-title">First Semester, SY 2025-2026</h3><span class="summary-meta">27 units</span><span class="status-pill">Completed</span></summary>
+            <div class="table-wrap"><table class="data-table"><thead><tr><th>Code</th><th>Course title</th><th class="num">Units</th><th>Status</th></tr></thead><tbody><tr><td>GEC 1</td><td>Understanding the Self</td><td class="num">3</td><td>Passed</td></tr><tr><td>GEC 2</td><td>Readings in Philippine History</td><td class="num">3</td><td>Passed</td></tr><tr><td>GEC 3</td><td>The Contemporary World</td><td class="num">3</td><td>Passed</td></tr><tr><td>IT 101</td><td>Introduction to Computing</td><td class="num">3</td><td>Passed</td></tr><tr><td>NSTP 1</td><td>National Service Training Program 1</td><td class="num">3</td><td>Passed</td></tr></tbody></table></div>
+          </details>
+          <details class="info-card term-details">
+            <summary><h3 class="summary-title">Second Semester, SY 2025-2026</h3><span class="summary-meta">27 units</span><span class="status-pill">Completed</span></summary>
+            <div class="table-wrap"><table class="data-table"><thead><tr><th>Code</th><th>Course title</th><th class="num">Units</th><th>Status</th></tr></thead><tbody><tr><td>GEC 6</td><td>Art Appreciation</td><td class="num">3</td><td>Passed</td></tr><tr><td>GEC 7</td><td>Science, Technology and Society</td><td class="num">3</td><td>Passed</td></tr><tr><td>GEC 8</td><td>Ethics</td><td class="num">3</td><td>Passed</td></tr><tr><td>IT 104</td><td>Computer Programming 2</td><td class="num">3</td><td>Passed</td></tr><tr><td>NSTP 2</td><td>National Service Training Program 2</td><td class="num">3</td><td>Passed</td></tr></tbody></table></div>
+          </details>
+          <details class="info-card term-details">
+            <summary><h3 class="summary-title">Midyear, SY 2025-2026</h3><span class="summary-meta">15 units</span><span class="status-pill">Completed</span></summary>
+            <div class="table-wrap"><table class="data-table"><thead><tr><th>Code</th><th>Course title</th><th class="num">Units</th><th>Status</th></tr></thead><tbody><tr><td>IT 108</td><td>Networking 1</td><td class="num">3</td><td>Passed</td></tr><tr><td>IT 109</td><td>Information Management 1</td><td class="num">3</td><td>Passed</td></tr><tr><td>IT 110</td><td>Quantitative Methods</td><td class="num">3</td><td>Passed</td></tr></tbody></table></div>
+          </details>
+        </section>
+        <section class="year-group" aria-labelledby="second-year-title">
+          <h2 class="year-title" id="second-year-title">Second Year</h2>
+          <details class="info-card term-details" open>
+            <summary><h3 class="summary-title">First Semester, SY 2026-2027</h3><span class="summary-meta">18 units</span><span class="status-pill is-info">In progress</span></summary>
+            <div class="table-wrap"><table class="data-table"><thead><tr><th>Code</th><th>Course title</th><th class="num">Units</th><th>Status</th></tr></thead><tbody><tr><td>IT 201</td><td>Data Structures and Algorithms</td><td class="num">3</td><td>Enrolled</td></tr><tr><td>IT 202</td><td>Object-Oriented Programming</td><td class="num">3</td><td>Enrolled</td></tr><tr><td>IT 203</td><td>Networking 2</td><td class="num">3</td><td>Enrolled</td></tr><tr><td>IT 204</td><td>Information Management 2</td><td class="num">3</td><td>Enrolled</td></tr><tr><td>IT 205</td><td>Platform Technologies</td><td class="num">3</td><td>Enrolled</td></tr><tr><td>IT 206</td><td>Integrative Programming and Technologies</td><td class="num">3</td><td>Enrolled</td></tr></tbody></table></div>
+          </details>
+        </section>
+      </div>
     </main>
 
     <footer class="site-footer">
-      <a href="#">Terms &amp; Support</a>
-      <a href="#">Privacy Policy</a>
+      <a href="mailto:helpdesk@wvsu.edu.ph">Terms &amp; Support</a>
+      <a href="privacy.html">Privacy Policy</a>
     </footer>
 
-    <script src="data.js"></script>
-    <script src="curriculum.js"></script>
-    <script src="portal-menu.js"></script>
   </body>
 </html>

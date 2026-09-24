@@ -27,7 +27,7 @@
             <p class="login-description" id="login-description">Access your student records and progress page.</p>
           </div>
 
-          <form class="login-form">
+          <form class="login-form" action="dashboard.html" method="get">
             <label for="user-type">User Type</label>
             <select id="user-type" name="user-type">
               <option value="student">Student</option>
@@ -36,7 +36,7 @@
               <option value="application">Application</option>
             </select>
 
-            <label for="user-id" id="user-id-label">Student ID No.</label>
+            <label for="user-id">Student ID No.</label>
             <input
               id="user-id"
               name="user-id"
@@ -46,22 +46,10 @@
               required
             />
 
-            <fieldset class="date-field">
-              <legend>Date of Birth</legend>
-              <div class="date-selects">
-                <select id="birth-year" name="birth-year" aria-label="Birth year" autocomplete="bday-year" required>
-                  <option value="" selected disabled>Year</option>
-                </select>
-                <select id="birth-month" name="birth-month" aria-label="Birth month" autocomplete="bday-month" required disabled>
-                  <option value="" selected disabled>Month</option>
-                </select>
-                <select id="birth-day" name="birth-day" aria-label="Birth day" autocomplete="bday-day" required disabled>
-                  <option value="" selected disabled>Day</option>
-                </select>
-              </div>
-            </fieldset>
+            <label for="birth-date">Date of Birth</label>
+            <input id="birth-date" name="birth-date" type="date" autocomplete="bday" required />
 
-            <label for="password" id="password-label">Password</label>
+            <label for="password">Password</label>
             <input
               id="password"
               name="password"
@@ -72,11 +60,9 @@
             />
 
             <div class="form-actions">
-              <button class="secondary-button" type="button">Forgot Password</button>
-              <button class="primary-button" type="submit" id="submit-button">Next</button>
+              <a class="secondary-button" href="mailto:helpdesk@wvsu.edu.ph?subject=Portal%20password%20reset">Forgot Password</a>
+              <button class="primary-button" type="submit">Log In</button>
             </div>
-
-            <p class="form-status" role="status" aria-live="polite"></p>
           </form>
 
           <p class="apply-prompt">
@@ -94,21 +80,9 @@
     </main>
 
     <footer class="site-footer">
-      <a href="#">Terms &amp; Support</a>
-      <a href="#">Privacy Policy</a>
+      <a href="mailto:helpdesk@wvsu.edu.ph">Terms &amp; Support</a>
+      <a href="privacy.html">Privacy Policy</a>
     </footer>
 
-    <div class="loading-screen" id="loading-screen" role="status" aria-live="polite" hidden>
-      <div class="loading-brand" id="loading-brand">
-        <img class="loading-seal" src="assets/wvsu-seal-cropped.png" alt="" />
-        <p class="loading-name">
-          <span class="school">West Visayas State University</span>
-          <span class="portal">Main Campus Portal</span>
-        </p>
-      </div>
-      <span class="visually-hidden">Loading your portal, please wait.</span>
-    </div>
-
-    <script src="script.js"></script>
   </body>
 </html>

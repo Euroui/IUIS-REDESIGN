@@ -52,54 +52,32 @@
       </div>
 
       <section class="info-card evaluation-summary" aria-label="Evaluation progress">
-        <p class="evaluation-count" id="evaluation-count"></p>
-        <div class="progress-meter" role="img" id="evaluation-meter">
-          <span style="width: 0%"></span>
-        </div>
+        <p class="evaluation-count">1 of 6 evaluations completed</p>
+        <div class="progress-meter" role="img" aria-label="17 percent of evaluations completed"><span style="width: 17%"></span></div>
       </section>
 
-      <p class="page-status" id="page-status" role="status" aria-live="polite"></p>
-
-      <ul class="evaluation-list" id="evaluation-list"></ul>
+      <section class="evaluation-list" aria-label="Courses for evaluation">
+        <article class="info-card evaluation-item"><div><h2 class="block-title">IT 201 - Data Structures and Algorithms</h2><p class="card-note">REYES, ANA B.</p></div><a class="outline-button button-link" href="#evaluation-form">Evaluate</a></article>
+        <article class="info-card evaluation-item"><div><h2 class="block-title">IT 202 - Object-Oriented Programming</h2><p class="card-note">VILLANUEVA, CARLO D.</p></div><a class="outline-button button-link" href="#evaluation-form">Evaluate</a></article>
+        <article class="info-card evaluation-item"><div><h2 class="block-title">GE 8 - Ethics</h2><p class="card-note">Evaluation completed</p></div><span class="status-pill">Completed</span></article>
+      </section>
     </main>
 
-    <dialog class="evaluation-dialog" id="evaluation-dialog" aria-labelledby="dialog-title">
-      <form class="evaluation-form" id="evaluation-form" novalidate>
-        <div class="dialog-header">
-          <div>
-            <h2 class="block-title" id="dialog-title">Evaluate instructor</h2>
-            <p id="dialog-subtitle"></p>
-          </div>
-          <button class="dialog-close" type="button" id="dialog-close" aria-label="Close">&times;</button>
-        </div>
-
-        <p class="scale-key">
-          Rate each statement from 1 to 5: 5 Outstanding, 4 Very satisfactory, 3 Satisfactory, 2 Fair, 1 Poor.
-        </p>
-
-        <div id="criteria"></div>
-
-        <div>
-          <label class="field-label" for="comments">Comments (optional)</label>
-          <textarea id="comments" name="comments" rows="4" maxlength="500"></textarea>
-        </div>
-
-        <p class="form-status" id="evaluation-error" role="alert"></p>
-
-        <div class="dialog-actions">
-          <button class="secondary-button" type="button" id="dialog-cancel">Cancel</button>
-          <button class="primary-button" type="submit" id="dialog-submit">Submit evaluation</button>
-        </div>
+    <section class="evaluation-form info-card" id="evaluation-form" aria-labelledby="evaluation-form-title">
+      <h2 class="block-title" id="evaluation-form-title">Evaluation form</h2>
+      <p class="card-note">Rate each statement from 1 to 5, then send your feedback to Academic Affairs.</p>
+      <form class="login-form" action="mailto:academic-affairs@wvsu.edu.ph" method="post" enctype="text/plain">
+        <label for="course-evaluation">Course</label><select id="course-evaluation" name="course"><option>IT 201 - Data Structures and Algorithms</option><option>IT 202 - Object-Oriented Programming</option></select>
+        <label for="teaching-quality">Teaching quality</label><select id="teaching-quality" name="teaching-quality" required><option value="">Choose a rating</option><option>5 - Outstanding</option><option>4 - Very satisfactory</option><option>3 - Satisfactory</option><option>2 - Fair</option><option>1 - Poor</option></select>
+        <label for="evaluation-comments">Comments</label><textarea id="evaluation-comments" name="comments" rows="4"></textarea>
+        <button class="primary-button" type="submit">Submit evaluation</button>
       </form>
-    </dialog>
+    </section>
 
     <footer class="site-footer">
-      <a href="#">Terms &amp; Support</a>
-      <a href="#">Privacy Policy</a>
+      <a href="mailto:helpdesk@wvsu.edu.ph">Terms &amp; Support</a>
+      <a href="privacy.html">Privacy Policy</a>
     </footer>
 
-    <script src="data.js"></script>
-    <script src="faculty-evaluation.js"></script>
-    <script src="portal-menu.js"></script>
   </body>
 </html>
