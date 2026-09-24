@@ -1234,6 +1234,70 @@ body:not(:has(.mail-content:target)) .mail-content#inbox,
   justify-content: space-between;
   align-items: flex-start;
   gap: 18px;
+  flex-wrap: wrap;
+}
+
+.schedule-card-heading > div {
+  flex: 1 1 260px;
+  min-width: 0;
+}
+
+.schedule-card-heading .status-pill {
+  flex-shrink: 0;
+}
+
+.schedule-card-heading .block-title {
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+.schedule-block-layout {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 14px;
+}
+
+.schedule-day-block {
+  padding: 16px;
+  background: #f7fafc;
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--blue-700);
+  border-radius: 10px;
+}
+
+.schedule-day-block h3 {
+  margin: 0 0 12px;
+  color: var(--blue-900);
+  font-size: 1.05rem;
+}
+
+.schedule-day-block ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 10px;
+}
+
+.schedule-day-block li {
+  display: grid;
+  gap: 4px;
+  padding: 10px 12px;
+  color: var(--ink);
+  background: #ffffff;
+  border: 1px solid #dfeaf4;
+  border-radius: 8px;
+}
+
+.schedule-slot-label {
+  color: var(--blue-900);
+  font-weight: 800;
+}
+
+.schedule-slot-meta {
+  color: var(--muted);
+  font-size: 0.85rem;
+  line-height: 1.4;
 }
 
 .semester-picker {
@@ -1359,6 +1423,52 @@ body:not(:has(.mail-content:target)) .mail-content#inbox,
   color: var(--blue-900);
   font-weight: 800;
   white-space: nowrap;
+}
+
+.semester-history-table {
+  display: table;
+  width: 100%;
+  min-width: 0;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+.semester-history-table tr {
+  display: table-row;
+}
+
+.semester-history-table th,
+.semester-history-table td {
+  display: table-cell;
+  max-width: 0;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+.semester-history-table th:nth-child(1),
+.semester-history-table td:nth-child(1) {
+  width: 14%;
+}
+
+.semester-history-table th:nth-child(2),
+.semester-history-table td:nth-child(2) {
+  width: 26%;
+}
+
+.semester-history-table th:nth-child(3),
+.semester-history-table td:nth-child(3) {
+  width: 36%;
+}
+
+.semester-history-table th:nth-child(4),
+.semester-history-table td:nth-child(4) {
+  width: 24%;
+}
+
+.semester-history-table td:nth-child(3),
+.semester-history-table td:nth-child(4) {
+  vertical-align: top;
 }
 
 .meeting-line {

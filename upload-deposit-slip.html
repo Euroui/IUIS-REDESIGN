@@ -9,7 +9,58 @@
       <li><a href="dashboard.html">Dashboard</a></li><li><a href="message.html">Message</a></li><li><a href="class-offerings.html">Class Offerings</a></li><li><a href="registration.html">Registration</a></li><li><a href="personal-information.html">Personal Information</a></li><li><a href="my-schedule.html">My Schedule</a></li><li><a href="grades.html">My Grades</a></li><li><a href="my-accounts.html">My Accounts</a></li><li><a href="calendar.html">Calendar</a></li><li><a href="password.html">Password</a></li><li><a href="deficiency.html">Deficiency</a></li><li><a href="log-trail.html">Log Trail</a></li><li><a href="enrollment-confirmation.html">Enrollment Confirmation</a></li><li><a href="upload-deposit-slip.html" aria-current="page">Upload Deposit Slip</a></li><li><a href="subject-adjustment.html">Subject Adjustment</a></li><li><a href="faculty-evaluation.html">Faculty Evaluation</a></li>
       <li class="menu-divider" aria-hidden="true"></li><li><a href="index.html">Log out</a></li>
     </ul></nav>
-    <main class="page-content"><div class="page-heading"><div><h1>Upload Deposit Slip</h1><p>Submit proof of payment for review by the university.</p></div></div><section class="info-card detail-card"><h2 class="block-title">Deposit slip submission</h2><p class="card-note">Deposit slip uploads will be available when a payment request is created.</p></section></main>
+    <main class="page-content">
+      <div class="page-heading">
+        <div>
+          <h1>Upload Deposit Slip</h1>
+          <p>Submit proof of payment for review by the university.</p>
+        </div>
+      </div>
+
+      <section class="info-card application-card" aria-labelledby="proof-of-payment-title">
+        <div class="application-card-heading">
+          <div>
+            <p class="profile-eyebrow">Payment</p>
+            <h2 class="block-title" id="proof-of-payment-title">Upload Proof of Payment</h2>
+          </div>
+        </div>
+
+        <div style="display: grid; gap: 1rem; padding: 0.25rem 0;">
+          <p class="card-note" style="margin: 0; color: var(--ink); font-weight: 700; text-transform: uppercase; letter-spacing: 0.02em;">ATTENTION:</p>
+          <p class="card-note" style="margin: 0;">Make sure that you have received an email or message that your Registration and Assessment is already confirmed and processed before uploading your proof of payment to avoid problems with your transaction.</p>
+
+          <div style="padding: 1rem 1.25rem; border-left: 4px solid #d4a017; background: #fff9ea; border-radius: 8px;">
+            <p class="card-note" style="margin: 0; color: var(--ink); font-weight: 700;">Security Advisory:</p>
+            <p class="card-note" style="margin: 0.35rem 0 0;">I certify that the file uploaded is a scanned copy of the original bank deposit slip or official slip of my proof of payment.</p>
+          </div>
+
+          <p class="card-note" style="margin: 0; color: var(--ink); font-weight: 700;">Upload scanned copy of proof of payment here.</p>
+          <p class="card-note" style="margin: 0;">(* .img, * .jpg, *.pdf, *.jpeg, *.png)</p>
+
+          <div class="upload-field" style="margin-top: 0.25rem;">
+            <label for="proof-of-payment">Select file</label>
+            <input id="proof-of-payment" name="proof-of-payment" type="file" accept=".img,.jpg,.jpeg,.pdf,.png,image/png,image/jpeg,application/pdf" />
+            <p class="field-help">Click this link to select files/documents from your computer.</p>
+          </div>
+
+          <div style="padding: 1rem 1.25rem; background: #f6f9fc; border: 1px solid var(--line); border-radius: 8px; display: grid; gap: 0.5rem;">
+            <p class="card-note" style="margin: 0; color: var(--ink); font-weight: 700;">File naming instructions:</p>
+            <p class="card-note" style="margin: 0;"><strong>FOR STUDENT:</strong> Student No.LASTNAMEFIRSTNAME(12-3456CRUZJUAN)</p>
+            <p class="card-note" style="margin: 0;"><strong>FOR APPLICANT:</strong> Applicant No.LASTNAMEFIRSTNAME(12-3456CRUZJUAN)</p>
+            <ul class="field-help" style="margin: 0; padding-left: 1.2rem; display: grid; gap: 0.35rem;">
+              <li>If your Student No. has special character, please include it.</li>
+              <li>Please don't include any space in between the file name.</li>
+              <li>Make sure your Last Name and First Name is in CAPITAL LETTERS.</li>
+            </ul>
+          </div>
+
+          <div style="display: grid; gap: 0.35rem; padding-top: 0.25rem;">
+            <p class="card-note" style="margin: 0; color: var(--ink); font-weight: 700;">Uploaded Files History</p>
+            <p class="card-note" style="margin: 0;">*No uploaded files yet.*</p>
+          </div>
+        </div>
+      </section>
+    </main>
     <footer class="site-footer"><a href="mailto:helpdesk@wvsu.edu.ph">Terms &amp; Support</a><a href="privacy.html">Privacy Policy</a></footer>
   </body>
 </html>
