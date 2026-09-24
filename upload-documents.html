@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WVSU Upload Documents</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="pages.css" />
+  </head>
+  <body class="dashboard-page">
+    <input class="menu-checkbox page-menu-checkbox" id="page-menu-toggle" type="checkbox" aria-label="Toggle student pages" />
+    <label class="menu-toggle page-menu-toggle" for="page-menu-toggle" aria-label="Toggle student pages"><span></span><span></span><span></span></label>
+    <header class="site-header">
+      <div class="header-inner">
+        <p class="header-title">
+          <span class="school">West Visayas State University</span>
+          <span class="portal">Main Campus Portal</span>
+        </p>
+      </div>
+    </header>
+
+    <nav class="site-nav" aria-label="Student pages">
+      <ul>
+        <li><a href="dashboard.html">Dashboard</a></li>
+        <li><a href="message.html">Message</a></li>
+        <li><a href="class-offerings.html">Class Offerings</a></li>
+        <li><a href="registration.html">Registration</a></li>
+        <li><a href="personal-information.html">Personal Information</a></li>
+        <li><a href="my-schedule.html">My Schedule</a></li>
+        <li><a href="grades.html">My Grades</a></li>
+        <li><a href="my-accounts.html">My Accounts</a></li>
+        <li><a href="calendar.html">Calendar</a></li>
+        <li><a href="password.html">Password</a></li>
+        <li><a href="deficiency.html">Deficiency</a></li>
+        <li><a href="log-trail.html">Log Trail</a></li>
+        <li><a href="enrollment-confirmation.html">Enrollment Confirmation</a></li>
+        <li><a href="upload-deposit-slip.html">Upload Deposit Slip</a></li>
+        <li><a href="subject-adjustment.html">Subject Adjustment</a></li>
+        <li><a href="faculty-evaluation.html">Faculty Evaluation</a></li>
+        <li class="menu-divider" aria-hidden="true"></li>
+        <li><a href="index.html">Log out</a></li>
+      </ul>
+    </nav>
+
+    <main class="page-content">
+      <nav class="application-steps" aria-label="Application steps">
+        <a class="application-step" href="personal-information.html">
+          <span class="step-number">STEP 1</span>
+          <span class="step-label">Personal Information</span>
+        </a>
+        <a class="application-step" href="educational-information.html">
+          <span class="step-number">STEP 2</span>
+          <span class="step-label">Educational Information</span>
+        </a>
+        <a class="application-step" href="family-information.html">
+          <span class="step-number">STEP 3</span>
+          <span class="step-label">Family Information</span>
+        </a>
+        <a class="application-step is-active" href="upload-documents.html" aria-current="step">
+          <span class="step-number">STEP 4</span>
+          <span class="step-label">Upload Documents / ID and Certification</span>
+        </a>
+      </nav>
+
+      <div class="page-heading">
+        <div>
+          <h1>Upload Documents / ID and Certification</h1>
+          <p>Submit the required files and confirm that your application details are accurate.</p>
+        </div>
+      </div>
+
+      <section class="info-card application-card" aria-labelledby="applicant-title">
+        <div class="application-card-heading">
+          <div>
+            <p class="profile-eyebrow">Applicant</p>
+            <h2 class="block-title" id="applicant-title">John Doe</h2>
+          </div>
+          <span class="application-reference">Applicant ID: WVSU-2026-0001</span>
+        </div>
+      </section>
+
+      <form class="application-form" action="upload-documents.html" method="post" enctype="multipart/form-data">
+        <section class="info-card application-card" aria-labelledby="photo-title">
+          <div class="application-card-heading">
+            <div>
+              <h2 class="block-title" id="photo-title">Applicant's ID Picture</h2>
+              <p class="card-note">Please upload a latest passport-sized photo.</p>
+            </div>
+          </div>
+          <div class="upload-field">
+            <label for="applicant-photo">Upload your photo</label>
+            <input id="applicant-photo" name="applicant-photo" type="file" accept=".jpeg,.jpg,image/jpeg" />
+            <p class="field-help">JPEG or JPG only. Maximum file size: 5MB.</p>
+          </div>
+        </section>
+
+        <section class="info-card application-card" aria-labelledby="documents-title">
+          <div class="application-card-heading">
+            <div>
+              <h2 class="block-title" id="documents-title">Document Requirements</h2>
+              <p class="card-note">Upload scanned copies of the required documents here.</p>
+            </div>
+          </div>
+          <div class="document-list">
+            <div class="document-row">
+              <div>
+                <strong>Whole Page 1 of Report Card or Certification</strong>
+                <p>For graduating Grade 12 students or Grade 12 graduates.</p>
+              </div>
+              <label class="file-button" for="report-card-page-1">Choose file</label>
+              <input id="report-card-page-1" name="report-card-page-1" type="file" accept=".img,.jpg,.jpeg,.pdf,image/*,application/pdf" />
+            </div>
+            <div class="document-row">
+              <div>
+                <strong>Whole Page 2 of Report Card, if applicable</strong>
+                <p>For graduating Grade 12 students or Grade 12 graduates.</p>
+              </div>
+              <label class="file-button" for="report-card-page-2">Choose file</label>
+              <input id="report-card-page-2" name="report-card-page-2" type="file" accept=".img,.jpg,.jpeg,.pdf,image/*,application/pdf" />
+            </div>
+          </div>
+          <p class="field-help">Supported formats: IMG, JPG, JPEG, and PDF.</p>
+        </section>
+
+        <section class="info-card application-card certification-card" aria-labelledby="certification-title">
+          <div class="application-card-heading">
+            <div>
+              <h2 class="block-title" id="certification-title">Applicant Certification</h2>
+              <p class="card-note">Please review the certification before submitting your application.</p>
+            </div>
+          </div>
+          <p class="certification-copy">I hereby certify that I have read and fully understood all instructions regarding my application for admissions at West Visayas State University and that the information supplied in this application and the documentation supporting it are correct and complete.</p>
+          <p class="certification-copy">I understand that incomplete or inaccurate information could be prejudicial to my admission. If accepted as a student of the West Visayas State University, I agree to abide by its policies and regulations.</p>
+          <label class="agreement-field" for="certification-agreement">
+            <input id="certification-agreement" name="certification-agreement" type="checkbox" required />
+            <span>I AGREE.</span>
+          </label>
+          <div class="certification-fields">
+            <label class="text-field" for="student-name">
+              <span>Student Name</span>
+              <input id="student-name" name="student-name" type="text" value="John Doe" required />
+            </label>
+            <label class="text-field" for="certification-date">
+              <span>Date</span>
+              <input id="certification-date" name="certification-date" type="date" required />
+            </label>
+          </div>
+          <div class="form-actions">
+            <button class="primary-button" type="submit">Submit Certification</button>
+          </div>
+        </section>
+      </form>
+    </main>
+
+    <footer class="site-footer">
+      <a href="mailto:helpdesk@wvsu.edu.ph">Terms &amp; Support</a>
+      <a href="privacy.html">Privacy Policy</a>
+    </footer>
+  </body>
+</html>

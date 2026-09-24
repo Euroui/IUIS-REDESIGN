@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WVSU Family Information</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="pages.css" />
+  </head>
+  <body class="dashboard-page">
+    <input class="menu-checkbox page-menu-checkbox" id="page-menu-toggle" type="checkbox" aria-label="Toggle student pages" />
+    <label class="menu-toggle page-menu-toggle" for="page-menu-toggle" aria-label="Toggle student pages"><span></span><span></span><span></span></label>
+    <header class="site-header"><div class="header-inner"><p class="header-title"><span class="school">West Visayas State University</span><span class="portal">Main Campus Portal</span></p></div></header>
+    <nav class="site-nav" aria-label="Student pages"><ul>
+      <li><a href="dashboard.html">Dashboard</a></li><li><a href="message.html">Message</a></li><li><a href="class-offerings.html">Class Offerings</a></li><li><a href="registration.html">Registration</a></li><li><a href="personal-information.html">Personal Information</a></li><li><a href="my-schedule.html">My Schedule</a></li><li><a href="grades.html">My Grades</a></li><li><a href="my-accounts.html">My Accounts</a></li><li><a href="calendar.html">Calendar</a></li><li><a href="password.html">Password</a></li><li><a href="deficiency.html">Deficiency</a></li><li><a href="log-trail.html">Log Trail</a></li><li><a href="enrollment-confirmation.html">Enrollment Confirmation</a></li><li><a href="upload-deposit-slip.html">Upload Deposit Slip</a></li><li><a href="subject-adjustment.html">Subject Adjustment</a></li><li><a href="faculty-evaluation.html">Faculty Evaluation</a></li><li class="menu-divider" aria-hidden="true"></li><li><a href="index.html">Log out</a></li>
+    </ul></nav>
+
+    <main class="page-content">
+      <nav class="application-steps" aria-label="Application steps">
+        <a class="application-step" href="personal-information.html"><span class="step-number">STEP 1</span><span class="step-label">Personal Information</span></a>
+        <a class="application-step" href="educational-information.html"><span class="step-number">STEP 2</span><span class="step-label">Educational Information</span></a>
+        <a class="application-step is-active" href="family-information.html" aria-current="step"><span class="step-number">STEP 3</span><span class="step-label">Family Information</span></a>
+        <a class="application-step" href="upload-documents.html"><span class="step-number">STEP 4</span><span class="step-label">Upload Documents / ID and Certification</span></a>
+      </nav>
+      <div class="page-heading"><div><h1>Family Information</h1><p>Review the family details included in the application.</p></div></div>
+      <form class="family-form" action="family-information.html" method="post">
+        <section class="info-card application-card family-section" aria-labelledby="family-title">
+          <div class="application-card-heading"><div><p class="profile-eyebrow">Applicant</p><h2 class="block-title" id="family-title">John Doe</h2></div><span class="application-reference">Step 3 of 4</span></div>
+
+          <div class="family-person-grid">
+            <fieldset class="family-person">
+              <legend>Father's Information</legend>
+              <div class="family-field-grid">
+                <label class="family-field family-field-wide" for="father-name"><span>Father's Complete Name</span><input id="father-name" name="father-name" type="text" placeholder="Unknown" /></label>
+                <label class="family-field family-field-wide" for="father-address"><span>Address</span><input id="father-address" name="father-address" type="text" value="Same as Permanent" /></label>
+                <label class="family-field" for="father-email"><span>Email Address</span><input id="father-email" name="father-email" type="email" placeholder="Unknown" /></label>
+                <label class="family-field" for="father-contact"><span>Contact Number</span><input id="father-contact" name="father-contact" type="tel" placeholder="Unknown" /></label>
+                <label class="family-field" for="father-degree"><span>Highest Degree Earned</span><select id="father-degree" name="father-degree"><option value="" selected>Unknown</option><option>Doctoral Degree</option><option>Masteral Degree</option><option>Bachelors Degree</option><option>Undergraduate</option><option>High School</option><option>Elementary</option></select></label>
+                <label class="family-field" for="father-occupation"><span>Occupation</span><input id="father-occupation" name="father-occupation" type="text" placeholder="Unknown" /></label>
+              </div>
+            </fieldset>
+
+            <fieldset class="family-person">
+              <legend>Mother's Information</legend>
+              <div class="family-field-grid">
+                <label class="family-field family-field-wide" for="mother-name"><span>Mother's Complete Name</span><input id="mother-name" name="mother-name" type="text" placeholder="Unknown" /></label>
+                <label class="family-field family-field-wide" for="mother-address"><span>Address</span><input id="mother-address" name="mother-address" type="text" value="Same as Permanent" /></label>
+                <label class="family-field" for="mother-email"><span>Email Address</span><input id="mother-email" name="mother-email" type="email" placeholder="Unknown" /></label>
+                <label class="family-field" for="mother-contact"><span>Contact Number</span><input id="mother-contact" name="mother-contact" type="tel" placeholder="Unknown" /></label>
+                <label class="family-field" for="mother-degree"><span>Highest Degree Earned</span><select id="mother-degree" name="mother-degree"><option value="" selected>Unknown</option><option>Doctoral Degree</option><option>Masteral Degree</option><option>Bachelors Degree</option><option>Undergraduate</option><option>High School</option><option>Elementary</option></select></label>
+                <label class="family-field" for="mother-occupation"><span>Occupation</span><input id="mother-occupation" name="mother-occupation" type="text" placeholder="Unknown" /></label>
+              </div>
+            </fieldset>
+          </div>
+        </section>
+
+        <section class="info-card application-card family-section" aria-labelledby="emergency-contact-title">
+          <div class="application-card-heading"><div><h2 class="block-title" id="emergency-contact-title">Person to Contact in Case of Emergency</h2></div></div>
+          <div class="family-field-grid emergency-grid">
+            <label class="family-field" for="emergency-name"><span>Full Name</span><input id="emergency-name" name="emergency-name" type="text" placeholder="Unknown" /></label>
+            <label class="family-field" for="emergency-address"><span>Address</span><input id="emergency-address" name="emergency-address" type="text" value="Same as Permanent" /></label>
+            <label class="family-field" for="emergency-contact"><span>Contact Number</span><input id="emergency-contact" name="emergency-contact" type="tel" placeholder="Unknown" /></label>
+            <label class="family-field" for="emergency-relationship"><span>Relationship to the Applicant</span><input id="emergency-relationship" name="emergency-relationship" type="text" placeholder="Unknown" /></label>
+          </div>
+        </section>
+
+        <section class="info-card application-card family-section" aria-labelledby="siblings-title">
+          <div class="application-card-heading"><div><h2 class="block-title" id="siblings-title">Learner's Siblings</h2><p class="card-note">Please input another child or children you wish to enroll in this school.</p></div></div>
+          <label class="sibling-check" for="enroll-sibling"><input id="enroll-sibling" name="enroll-sibling" type="checkbox" /><span>Tick this box if you wish to enroll the sibling.</span></label>
+          <div id="sibling-list" class="sibling-list">
+            <div class="family-field-grid sibling-grid sibling-entry" data-sibling-index="1">
+            <label class="family-field family-field-wide" for="sibling-name"><span>Full Name</span><input id="sibling-name" name="sibling-name" type="text" placeholder="Unknown" /></label>
+            <label class="family-field" for="sibling-year"><span>Year Level</span><select id="sibling-year" name="sibling-year"><option value="" selected>Unknown</option><option>First Year</option><option>Second Year</option><option>Third Year</option><option>Fourth Year</option><option>Fifth Year</option><option>Sixth Year</option><option>Grade 1</option><option>Grade 2</option><option>Grade 3</option><option>Grade 4</option><option>Grade 5</option><option>Grade 6</option><option>Grade 7</option><option>Grade 8</option><option>Grade 9</option><option>Grade 10</option><option>Kinder 1</option><option>Kinder 2</option><option>Nursery</option><option>Grade 11</option><option>Grade 12</option></select></label>
+            <fieldset class="family-choice"><legend>Gender</legend><label><input name="sibling-gender" type="radio" value="Male" /> Male</label><label><input name="sibling-gender" type="radio" value="Female" /> Female</label></fieldset>
+            <label class="family-field" for="sibling-birth-date"><span>Birth Date</span><input id="sibling-birth-date" name="sibling-birth-date" type="date" /></label>
+            <label class="family-field family-field-wide" for="sibling-program"><span>Course/Program</span><select id="sibling-program" name="sibling-program"><option value="" selected>Unknown</option>
+              <option>AB-ELS - Bachelor of Arts in English Language Studies</option><option>AB-FL - Bachelor of Arts in Foreign Language</option><option>AB-POLSCI - Bachelor of Arts in Political Science</option><option>BAB - Bachelor of Arts in Broadcasting</option><option>BAJ - Bachelor of Arts in Journalism</option><option>BCAED - Bachelor of Culture And Arts Education</option><option>BECED - Bachelor of Early Childhood Education</option><option>BEED - Bachelor of Elementary Education</option><option>BLIS - Bachelor of Library And Information Science</option><option>BPEA - Bachelor of Performing Arts (Dance Track)</option><option>BPED - Bachelor of Physical Education</option><option>BS BIO - Bachelor of Science in Biology</option><option>BS CHEM - Bachelor of Science in Chemistry</option><option>BS PSYCH - Bachelor of Science in Psychology</option><option>BSAM - Bachelor of Science in Applied Mathematics</option><option>BSBA-FM - Bachelor of Science in Business Administration Major in Financial Management</option><option>BSBA-OM - Bachelor of Science in Business Administration Major in Operations Management</option><option>BSCM - Bachelor of Science in Cooperatives Management</option><option>BSCS - Bachelor of Science in Computer Science</option><option>BSDC - Bachelor of Science in Development Communication</option><option>BSED-ENG - Bachelor of Secondary Education Major in English</option><option>BSED-FIL - Bachelor of Secondary Education Major in Filipino</option><option>BSED-MATH - Bachelor of Secondary Education Major in Mathematics</option><option>BSED-SCI - Bachelor of Secondary Education Major in Science</option><option>BSED-SOCSTUD - Bachelor of Secondary Education Major in Social Studies</option><option>BSED-VAL ED - Bachelor of Secondary Education Major in Values Education</option><option>BSEMC - Bachelor of Science in Entertainment And Multimedia Computing</option><option>BSESS-FSC - Bachelor of Science in Exercise And Sports Sciences</option><option>BSHM - Bachelor of Science in Hospitality Management</option><option>BSIS - Bachelor of Science in Information Systems</option><option>BSIT - Bachelor of Science in Information Technology</option><option>BSN - Bachelor of Science in Nursing</option><option>BSNED-ELEM - Bachelor of Special Needs Education</option><option>BSTM - Bachelor of Science in Tourism Management</option><option>DE DIT - Diploma in Teaching</option><option>DMD - Doctor of Dental Medicine</option><option>JD - Juris Doctor</option><option>MD - Medicine</option><option>NA - Not Applicable</option><option>PREP - Kinder</option><option>SHS-ABM - Senior High School ABM Strand</option><option>SHS-GA - Senior High School GA Strand</option><option>SHS-HUMSS - Senior High School HUMSS Strand</option><option>SHS-STEM - Senior High School STEM Strand</option></select></label>
+            <label class="family-field family-field-wide" for="sibling-program-additional"><span>Additional Course/Program Options</span><select id="sibling-program-additional" name="sibling-program-additional"><option value="" selected>Unknown</option><option>DE MA-SS - Master of Arts in Social Science</option><option>DE MAED-LA - Master of Arts in Education Major in Language Teaching</option><option>DE MAEDTCA - Master of Arts in Education Major in Teaching in Challenged Areas</option><option>DE MED-ECE - Master in Education Major in Early Childhood Education</option><option>DMD - Doctor of Dental Medicine</option><option>JD - Juris Doctor</option><option>MD - Medicine</option><option>MIT - Master in Information Technology</option><option>MPA - Master of Public Administration</option><option>MSB - Master of Science in Biology</option><option>NA - Not Applicable</option><option>PHD-AGRI - Doctor of Philosophy in Agriculture</option><option>PHD-BIO - Doctor of Philosophy in Science Education Major in Biology</option><option>PHD-CS - Doctor of Philosophy in Agriculture Major in Crop Science</option><option>PHD-EM - Doctor of Philosophy in Education Major in Educational Management</option><option>PHD-GC - Doctor of Philosophy in Guidance and Counseling</option><option>PHD-MATH - Doctor of Philosophy in Science Education Major in Math</option><option>PHD-SE - Doctor of Philosophy in Science Education</option><option>PHD-SS - Doctor of Philosophy in Social Science</option><option>WESTMED - WVSU Expedited Select Track for Medicine</option></select></label>
+            <label class="family-field family-field-wide" for="sibling-school"><span>School Enrolled</span><input id="sibling-school" name="sibling-school" type="text" placeholder="Unknown" /></label>
+            <input class="sibling-remove" type="submit" name="sibling-action" value="Remove sibling" />
+            </div>
+          </div>
+          <input class="secondary-button sibling-add" type="submit" name="sibling-action" value="+ Add sibling" />
+          <p class="unknown-note">Sibling information is currently unknown. The controls above are submit placeholders because this page does not use JavaScript.</p>
+        </section>
+
+        <div class="form-actions family-actions"><button class="primary-button" type="submit">Save Family Information</button></div>
+      </form>
+    </main>
+    <footer class="site-footer"><a href="mailto:helpdesk@wvsu.edu.ph">Terms &amp; Support</a><a href="privacy.html">Privacy Policy</a></footer>
+  </body>
+</html>

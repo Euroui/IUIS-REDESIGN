@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WVSU Educational Information</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="pages.css" />
+  </head>
+  <body class="dashboard-page">
+    <input class="menu-checkbox page-menu-checkbox" id="page-menu-toggle" type="checkbox" aria-label="Toggle student pages" />
+    <label class="menu-toggle page-menu-toggle" for="page-menu-toggle" aria-label="Toggle student pages"><span></span><span></span><span></span></label>
+    <header class="site-header"><div class="header-inner"><p class="header-title"><span class="school">West Visayas State University</span><span class="portal">Main Campus Portal</span></p></div></header>
+    <nav class="site-nav" aria-label="Student pages"><ul>
+      <li><a href="dashboard.html">Dashboard</a></li><li><a href="message.html">Message</a></li><li><a href="class-offerings.html">Class Offerings</a></li><li><a href="registration.html">Registration</a></li><li><a href="personal-information.html">Personal Information</a></li><li><a href="my-schedule.html">My Schedule</a></li><li><a href="grades.html">My Grades</a></li><li><a href="my-accounts.html">My Accounts</a></li><li><a href="calendar.html">Calendar</a></li><li><a href="password.html">Password</a></li><li><a href="deficiency.html">Deficiency</a></li><li><a href="log-trail.html">Log Trail</a></li><li><a href="enrollment-confirmation.html">Enrollment Confirmation</a></li><li><a href="upload-deposit-slip.html">Upload Deposit Slip</a></li><li><a href="subject-adjustment.html">Subject Adjustment</a></li><li><a href="faculty-evaluation.html">Faculty Evaluation</a></li><li class="menu-divider" aria-hidden="true"></li><li><a href="index.html">Log out</a></li>
+    </ul></nav>
+
+    <main class="page-content">
+      <nav class="application-steps" aria-label="Application steps">
+        <a class="application-step" href="personal-information.html"><span class="step-number">STEP 1</span><span class="step-label">Personal Information</span></a>
+        <a class="application-step is-active" href="educational-information.html" aria-current="step"><span class="step-number">STEP 2</span><span class="step-label">Educational Information</span></a>
+        <a class="application-step" href="family-information.html"><span class="step-number">STEP 3</span><span class="step-label">Family Information</span></a>
+        <a class="application-step" href="upload-documents.html"><span class="step-number">STEP 4</span><span class="step-label">Upload Documents / ID and Certification</span></a>
+      </nav>
+      <div class="page-heading"><div><h1>Educational Information</h1><p>Review the educational details included in the application.</p></div></div>
+      <section class="info-card application-card" aria-labelledby="educational-title">
+        <div class="application-card-heading"><div><p class="profile-eyebrow">Applicant</p><h2 class="block-title" id="educational-title">John Doe</h2></div><span class="application-reference">Step 2 of 4</span></div>
+        <dl class="info-list">
+          <div><dt>Education Level</dt><dd>Bachelors Degree</dd></div>
+          <div><dt>Program/Degree</dt><dd>BSIT - Bachelor of Science in Information Technology</dd></div>
+          <div><dt>Student Type</dt><dd>Local</dd></div>
+          <div><dt>Year Level</dt><dd>Second Year</dd></div>
+          <div><dt>Previous School</dt><dd class="is-empty">Not provided</dd></div>
+          <div><dt>Graduation Year</dt><dd class="is-empty">Not provided</dd></div>
+        </dl>
+      </section>
+    </main>
+    <footer class="site-footer"><a href="mailto:helpdesk@wvsu.edu.ph">Terms &amp; Support</a><a href="privacy.html">Privacy Policy</a></footer>
+  </body>
+</html>
